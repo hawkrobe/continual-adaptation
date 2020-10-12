@@ -7,13 +7,31 @@
 * scripts for analyzing/visualizing data from experiments are in `/analysis/`
 * paper is in `/writing/`
 
-# Setup
+# To reproduce experiments
 
-1. Follow instructions [here](https://github.com/yunjey/pytorch-tutorial/tree/master/tutorials/03-advanced/image_captioning) to download COCO dataset, and install COCO API.
+1. install PyTorch and the COCO API:
 
-2. Extract [pretrained model weights](https://www.dropbox.com/s/ne0ixz5d58ccbbz/pretrained_model.zip?dl=0) and [vocabulary](https://www.dropbox.com/s/26adb7y9m98uisa/vocap.zip?dl=0) files to `/data/preprocess/`
+```
+conda install pytorch torchvision -c pytorch
+conda install Cython nltk
+git clone https://github.com/pdollar/coco.git
+cd coco/PythonAPI/
+make
+python setup.py build
+python setup.py install
+cd ../../
+``` 
 
-Place 
+2. clone repo and download coco annotations and images for experiments
+
+```
+git clone https://github.com/hawkrobe/continual-adaptation.git
+sh download-coco.sh
+```
+
+3. Extract [pretrained model weights](https://www.dropbox.com/s/ne0ixz5d58ccbbz/pretrained_model.zip?dl=0) and [vocabulary](https://www.dropbox.com/s/26adb7y9m98uisa/vocap.zip?dl=0) files to `./data/preprocess/`
+
+For more information on pretrained model, see tutorial [here](https://github.com/yunjey/pytorch-tutorial/tree/master/tutorials/03-advanced/image_captioning)
 
 # Dependencies
 
