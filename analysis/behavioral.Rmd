@@ -1,0 +1,303 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# imports 
+
+Import packages 
+
+```{r}
+library(tidyverse)
+library(lme4)
+library(tidyboot)
+library(jsonlite)
+library(ggthemes)
+library(lemon)
+library(cowplot)
+```
+
+Read in 'hard' human-human data
+
+```{r}
+exitSurvey.raw.humanhuman <- read_csv('../data/human-human/exitSurveyFromMongo.csv') %>%
+  filter(iterationName != 'testing') %>%
+  mutate(source = 'human-human') %>% mutate(context = 'challenging')
+
+clickedObj.raw.humanhuman <- read_csv('../data/human-human/clickedObjFromMongo.csv') %>% 
+  filter(iterationName != 'testing') %>%
+  mutate(trialNum = as.numeric(trialNum), repNum = as.numeric(repNum)) %>%
+  select(-timeFromMessage,-targetImg)
+
+chatMessages.raw.humanhuman <- read_csv('../data/human-human/messageFromMongo.csv') %>% 
+  filter(iterationName != 'testing') %>%
+  mutate(uttLength =str_count(msg, "\\S+")) %>%
+  group_by(gameid, trialNum, repNum, targetImg, context_id) %>%
+  summarize(msg = paste0(msg, collapse = ', '),
+            uttLength = sum(uttLength))
+
+d.humanhuman <- left_join(chatMessages.raw.humanhuman, clickedObj.raw.humanhuman, 
+               by = c('gameid', 'trialNum', 'repNum', 'context_id')) %>%
+  ungroup() %>%
+  mutate(targetImg = gsub('{"url":"', '', targetImg, fixed = TRUE)) %>%
+  mutate(targetImg = gsub('","targetStatus":"target"}', '', targetImg, fixed = TRUE)) %>%
+  select(-fullContext)
+  
+incompleteIDs.humanhuman <- clickedObj.raw.humanhuman %>% group_by(gameid) %>% tally() %>% filter(n != 24) %>% pull(gameid)
+
+```
+
+
+# Read in model-as-listener data
+
+```{r}
+exitSurvey.raw.modellistener <- read_csv('../data/model-as-listener/exitSurveyFromMongo.csv') %>%
+  select(-isHuman) %>%
+  mutate(source = 'model-human',
+         context = 'challenging')
+
+clickedObj.raw.modellistener <- read_csv('../data/model-as-listener/clickedObjFromMongo.csv') %>% 
+  mutate(trialNum = as.numeric(trialNum), repNum = as.numeric(repNum)) %>%
+  select(-timeFromMessage,-targetImg)
+
+chatMessages.raw.modellistener <- read_csv('../data/model-as-listener/messageFromMongo.csv') %>% 
+  mutate(uttLength =str_count(msg, "\\S+")) %>%
+  select(-timeFromRoundStart, -iterationName, -time)
+
+d.modellistener <- left_join(chatMessages.raw.modellistener, clickedObj.raw.modellistener, 
+               by = c('gameid', 'trialNum', 'repNum', 'context_id')) %>%
+  filter(iterationName == 'final-for-paper') %>%
+  ungroup() %>%
+  mutate(targetImg = gsub('{"url":"', '', targetImg, fixed = TRUE)) %>%
+  mutate(targetImg = gsub('","targetStatus":"target"}', '', targetImg, fixed = TRUE)) %>%
+  select(-fullContext)
+
+incompleteIDs.modellistener <- clickedObj.raw.modellistener %>% 
+  group_by(gameid) %>% 
+  tally() %>% 
+  filter(n != 24) %>% 
+  pull(gameid)
+uncooperativeIDs <- c('9297-a1aff98a-9088-4347-a738-87ae5acba53c') # this person typed asdf asdf;alsk jf;lskdjf
+
+write(toJSON(d.modellistener %>% filter(!(gameid %in% c(incompleteIDs.modellistener,uncooperativeIDs)))), file = '../data/model-as-listener/listenerLesionInput.json')
+```
+
+# Read in 'easy' human-human data
+
+```{r}
+exitSurvey.raw.humanseasy <- read_csv('../data/human-human-easy/exitSurveyFromMongo.csv') %>%
+    mutate(source = 'human-human') %>% mutate(context = 'easy')
+
+clickedObj.raw.humanseasy <- read_csv('../data/human-human-easy/clickedObjFromMongo.csv') %>% 
+  mutate(trialNum = as.numeric(trialNum), repNum = as.numeric(repNum)) %>%
+  select(-timeFromMessage,-targetImg)
+chatMessages.raw.humanseasy <- read_csv('../data/human-human-easy/messageFromMongo.csv') %>% 
+  mutate(uttLength =str_count(msg, "\\S+")) %>%
+  select(-timeFromRoundStart, -iterationName, -time)
+
+d.humanhumaneasy <- left_join(chatMessages.raw.humanseasy, clickedObj.raw.humanseasy, 
+               by = c('gameid', 'trialNum', 'repNum', 'context_id')) %>%
+  filter(iterationName=='pilot1') %>%
+  ungroup() %>%
+  mutate(targetImg = gsub('{"url":"', '', targetImg, fixed = TRUE)) %>%
+  mutate(targetImg = gsub('","targetStatus":"target"}', '', targetImg, fixed = TRUE)) %>%
+  select(-fullContext)
+
+incompleteIDs.humanseasy <- clickedObj.raw.humanseasy %>% 
+  group_by(gameid) %>% 
+  tally() %>% 
+  filter(n != 24) %>% 
+  pull(gameid)
+
+d.humanhumaneasy %>%
+  filter(!(gameid %in% incompleteIDs.humanseasy)) %>%
+  toJSON() %>%
+  write(file = '../data/human-human-easy/humanHumanEasyContext.json')
+```
+
+
+# Read in 'model-as-speaker' data
+
+```{r}
+exitSurvey.raw.modelasspeaker <- read_csv('../data/model-as-speaker/exitSurveyFromMongo.csv') %>%
+  mutate(source = 'model-human') %>% mutate(context = 'easy')
+clickedObj.raw.modelasspeaker <- read_csv('../data/model-as-speaker/clickedObjFromMongo.csv') %>% 
+  mutate(trialNum = as.numeric(trialNum), repNum = as.numeric(repNum)) %>%
+  select(-timeFromMessage,-targetImg)
+chatMessages.raw.modelasspeaker <- read_csv('../data/model-as-speaker/messageFromMongo.csv') %>% 
+  mutate(uttLength =str_count(msg, "\\S+")) %>%
+  select(-timeFromRoundStart, -iterationName, -time)
+
+d.modelasspeaker <- left_join(chatMessages.raw.modelasspeaker, clickedObj.raw.modelasspeaker, 
+               by = c('gameid', 'trialNum', 'repNum', 'context_id')) %>%
+  ungroup() %>%
+  mutate(targetImg = gsub('{"url":"', '', targetImg, fixed = TRUE)) %>%
+  mutate(targetImg = gsub('","targetStatus":"target"}', '', targetImg, fixed = TRUE)) %>%
+  select(-fullContext)
+
+incompleteIDs.modelasspeaker <- clickedObj.raw.modelasspeaker %>% group_by(gameid) %>% tally() %>% filter(n != 24) %>% pull(gameid)
+write(toJSON(d.modelasspeaker %>% filter(!(gameid %in% c(incompleteIDs.modelasspeaker)))), 
+      file = '../data/model-as-speaker/speakerLesionInput.json')
+```
+
+
+```{r}
+d.raw <- rbind(d.modellistener %>% mutate(source = 'model-human'),
+           d.humanhuman %>% mutate(source = 'human-human')) %>% mutate(context = 'challenging') %>%
+  rbind(d.humanhumaneasy %>% mutate(source = 'human-human') %>% mutate(context = 'easy'))  %>%
+  rbind(d.modelasspeaker %>% mutate(source = 'model-human') %>% mutate(context = 'easy'))
+exitSurveys <- rbind(exitSurvey.raw.modelasspeaker, exitSurvey.raw.humanhuman, exitSurvey.raw.humanseasy, exitSurvey.raw.modellistener)
+incompleteIDs <- d.raw %>% group_by(gameid, source, context) %>% tally() %>% filter(n != 24) %>% pull(gameid)
+uncooperativeIDs <- c('9297-a1aff98a-9088-4347-a738-87ae5acba53c') # this person typed asdf asdf;alsk jf;lskdjf
+d <- d.raw %>% filter(!(gameid %in% c(incompleteIDs, uncooperativeIDs)))
+```
+
+# characterize dataset
+
+```{r}
+# look at number recruited before exclusions
+print('recuited')
+exitSurveys %>% group_by(gameid, role, source, context) %>% tally() %>% group_by(source, context) %>% summarize(n = length(n))
+# first look at number in each game
+print('complete games')
+d %>% group_by(gameid, source, context) %>% tally() %>% group_by(source, context) %>% summarize(n = length(n))
+cat('num utterances: ', length(d$gameid))
+cat('unique contexts: ', length(unique(d$context_id)))
+lengths <- exitSurveys %>% mutate(totalLength = totalLength / 1000 / 60) %>%
+  group_by(source, context) %>%
+  summarize(least = min(totalLength), avg = mean(totalLength), most = max(totalLength))
+```
+
+# actual human evaluation
+
+```{r}
+toplot <- d %>%
+  group_by(source, gameid, targetImg, context) %>%
+  gather(measure, val, correct, uttLength) %>%
+  group_by(source, repNum, measure, context) %>%
+  tidyboot_mean(val) %>%
+  select(-n, -mean) %>%
+  ungroup() %>%
+  bind_rows(read_csv('../data/model_output/listener_lesions.csv') %>% 
+              filter(loss == 'fixed') %>%
+              rename(repNum = rep_num) %>%
+              group_by(repNum) %>% 
+              tidyboot_mean(correct) %>% 
+              mutate(source = 'non-adapting', context = 'challenging', measure = 'correct')) %>%
+  bind_rows(read_csv('../data/model_output/speaker_lesions.csv') %>%
+            filter(cost_weight == 0, speaker_model == 'S0', ds_type == 'none') %>%
+            rename(repNum = rep_num) %>%
+            mutate(num_words =str_count(caption, "\\S+")) %>%
+            group_by(repNum) %>% 
+            tidyboot_mean(num_words) %>% 
+            mutate(source = 'non-adapting', context = 'easy', measure = 'uttLength'))
+```
+
+# look at pure reduction & accuracy
+
+```{r}
+library(cowplot)
+toplot %>% 
+  mutate(context = ifelse(context == 'easy', 'speaking (easy context)', 'listening (hard context)')) %>%
+  mutate(repNum = repNum + 1) %>%
+  filter(measure == 'correct') %>%
+  ggplot(aes(x = repNum, y = empirical_stat, 
+             color = source == 'human-human', group = source, 
+             linetype = source == 'non-adapting')) +
+    geom_line(size = 1.2) +
+    geom_point(size = 2) +
+    geom_hline(yintercept = .25, linetype =2) +
+    geom_errorbar(aes(ymin = ci_lower, ymax= ci_upper), width = 0, linetype='solid', size = .8) +
+    scale_x_continuous(breaks = c(1,2,3,4,5,6)) +
+    scale_y_continuous(breaks = c(0.25,0.5,0.75,1), labels = c('25', '50', '75', '100')) +
+    ylab('% accuracy') +
+    xlab('repetition') +
+    #ylim(0,1) +
+    facet_rep_wrap(~ context, repeat.tick.labels = 'all') +
+    theme_cowplot(14) +    
+    theme(aspect.ratio = 1.5) +
+    scale_color_manual(values=c( "#E59F24", "#000000"))
+
+ggsave('../writing/figures/accuracy.pdf',  height = 12, width = 18, units = 'cm', useDingbats = F)
+```
+
+```{r}
+toplot %>% 
+  mutate(context = ifelse(context == 'easy', 'speaking (easy context)', 'listening (hard context)')) %>%
+  mutate(repNum = repNum + 1) %>%
+  filter(measure == 'uttLength') %>%
+  ggplot(aes(x = repNum, y = empirical_stat, 
+             color = source == 'human-human', group = source, 
+             linetype = source == 'non-adapting')) + #, group = interaction(gameid, targetImg
+    geom_line(size = 1.2) +
+    geom_point(size = 2) +
+    geom_errorbar(aes(ymin = ci_lower, ymax= ci_upper), width = 0, size = .6) +
+    scale_x_continuous(breaks = c(1,2,3,4,5,6)) +
+    scale_y_continuous(breaks = c(1, 3, 5, 7, 9), labels = c('1', '3', '5', '7', '9')) +
+    ylab('# words') +
+    xlab('repetition') +
+    facet_rep_wrap(~ context, repeat.tick.labels = 'all') +
+    ylim(0,10) +
+    theme_cowplot() +    
+    theme(aspect.ratio = 1.5) +
+      scale_color_manual(values=c("#00BFC4", "#000000" ))
+
+ggsave('../writing/figures/numWords.pdf',  height = 12, width = 18, units = 'cm', useDingbats = F)
+```
+
+# Statistical tests:
+
+```{r}
+library(lmerTest)
+d$context = factor(d$context)
+contrasts(d$context) <- c(.5, -.5)
+d %>% 
+  filter(source == 'human-human') %>%
+  lmer(uttLength ~ poly(repNum, 2) * context + (1 | gameid) + (1 | targetImg), 
+      data = .) %>%
+  summary()
+```
+
+```{r}
+d %>% 
+  filter(source == 'model-human') %>% 
+  filter(context == 'challenging') %>%
+  glmer(correct ~ poly(repNum,2) + (1 | gameid) + (1 | targetImg), 
+        family='binomial', data = .) %>%
+  summary()
+```
+
+```{r}
+d %>% 
+  filter(source == 'model-human', context =='easy') %>%
+  lmer(uttLength ~ poly(repNum, 2) + (1 | gameid) + (1 | targetImg), 
+       data = .) %>%
+  summary()
+```
+
+Experimental visualization showing pareto front with efficiency & accuracy simultaneously
+
+```{r}
+toplot %>%
+  nest(empirical_stat, ci_lower, ci_upper, .key = 'value_col') %>%
+  spread(measure, value_col) %>%
+  unnest(correct,  uttLength, .sep = '_') %>%
+  rename(uttLength = uttLength_empirical_stat,
+         correct = correct_empirical_stat) %>%
+  mutate(context = ifelse(context == 'easy', 'speaking (easy context)', 'listening (hard context)')) %>%
+  ggplot(aes(x = uttLength, y = correct, color = source, fill = source, group = source)) +
+    geom_point(size = 2) +
+    geom_path() + # arrow=arrow(angle = 1
+    geom_text(aes(label = repNum + 1), size = 3, nudge_x = 0.2, nudge_y = -0.03) +
+    scale_y_log10() +
+    scale_x_reverse() +
+    theme_bw() +
+    ylim(0,1) +
+    facet_wrap(~ context) +
+    theme_few(14) +
+    xlab('log % initial utt length') +
+    ylab('% listener accuracy') +
+    scale_color_manual(values=c("#000000", "#E59F24"))
+
+ggsave('../writing/figures/pareto_plot.pdf',  height = 7, width = 10, units = 'cm', useDingbats = F)
+```

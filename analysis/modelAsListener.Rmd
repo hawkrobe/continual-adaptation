@@ -1,0 +1,247 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(lme4)
+library(tidyboot)
+library(jsonlite)
+library(cowplot)
+library(ggthemes)
+```
+
+# Listener catastrophic forgetting experiment
+
+## Unseen contexts (Fig. 4A)
+
+```{r}
+primary_cat_forget <- read_csv('../data/model_output/listener_cat_forgetting.csv') %>%
+  mutate(target_score = correct,
+         context = ifelse(is.na(test_gameid), 'adaptation', 'held-out')) %>%
+  select(i_iter, train_gameid, test_gameid, target, loss, target_score, context) %>%
+  spread(loss, target_score) %>%
+  group_by(train_gameid, context) %>%
+  summarize(with_KL = mean(`SCE+SKL+SR+LCE`) - mean(fixed),
+            without_KL = mean(`SCE+SR+LCE`) - mean(fixed)) %>%
+  gather(src, val, with_KL, without_KL)
+
+adaptation_context <- primary_cat_forget %>%
+  filter(context == 'adaptation') %>%
+  ungroup() %>%
+  tidyboot_mean(100*val)
+
+primary_cat_forget %>%
+  filter(context == 'held-out') %>%
+  ggplot(aes(x = src, y = 100*val)) +
+    geom_line(aes(group = train_gameid), alpha = 0.1) +
+    geom_point(size = 0.1) +
+    geom_point(aes(x = 'adaptation', y = empirical_stat), 
+               data = adaptation_context, size = 3, color = 'red') +
+    geom_errorbar(aes(x = 'adaptation', y = empirical_stat, ymin = ci_lower, ymax= ci_upper), 
+                  data = adaptation_context, width = 0, color = 'red') +
+    geom_hline(yintercept = 0) +
+    labs(x = '', y = 'change in % accuracy after adaptation') +
+    stat_summary(aes(group = 1), geom = 'point', 
+                 fun.y = mean, color = 'red', size = 3)+
+    stat_summary(aes(group = 1), geom = 'line', 
+                 fun.y = mean, color = 'red', size = 1) +
+    theme_cowplot() +
+    theme(aspect.ratio = 1) 
+
+ggsave('../writing/figures/listener_catastrophic_forgetting.pdf', 
+       height = 7, width = 10, units = 'cm', useDingbats = F)
+```
+
+## paired t-test for KL vs. no KL
+
+```{r}
+t.test.in <- read_csv('../data/model_output/listener_cat_forgetting.csv') %>%
+  mutate(target_score = correct,
+         context = ifelse(is.na(test_gameid), 'adaptation', 'held-out')) %>%
+  select(i_iter, train_gameid, test_gameid, 
+         target, loss, target_score, context) %>%
+  spread(loss, target_score) %>%
+  group_by(train_gameid, context) %>%
+  summarize(with_KL = mean(`SCE+SKL+SR+LCE`) - mean(fixed),
+         without_KL = mean(`SCE+SR+LCE`) - mean(fixed)) %>%
+  filter(context == 'held-out')
+
+t.test(t.test.in$with_KL, t.test.in$without_KL, paired = TRUE)
+
+```
+
+## gradual curves in Fig. 4B
+
+```{r}
+listener.adapt <- read_csv('../data/model_output/cap_comparison.csv') %>%
+  gather(score_type, score,control_score:last_score) %>%
+  #filter(loss %in% c('SCE+SKL+SR+LCE', 'SCE+SR+LCE')) %>%
+  mutate(trial_num = trial_num + 1) %>%
+  group_by(loss, trial_num, score_type) %>%
+  tidyboot_mean(score, nboot = 200) 
+
+listener.adapt %>%
+  ungroup() %>%
+  filter(loss %in% c('SCE+LCE', 'SCE+SKL+LCE', 'SCE+SKL+SR+LCE')) %>%
+  mutate(loss = case_when(loss == 'SCE+SKL+SR+LCE' ~ '+KL+rehearsal',
+                          loss == 'SCE+SKL+LCE' ~ '+KL',
+                          TRUE ~ 'cross-entropy')) %>%
+  mutate(loss = fct_relevel(loss, '+KL+rehearsal', '+KL', 'cross-entropy')) %>%
+  ggplot(aes(x = trial_num, y = empirical_stat, color = score_type)) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    geom_point() +
+    theme_few() +
+    facet_grid(~loss) + 
+    geom_smooth(method = 'loess', adjust = 2, se =F) +
+    ylab('mean log likelihood') +
+    xlab('trial #') +
+    scale_color_manual(values = c( '#e5cd23', '#d15d27','#80451d')) +
+    theme_cowplot()+
+    theme(aspect.ratio =1.5) 
+    
+ggsave('../writing/figures/catForgetting.pdf',  height = 7, width = 18, units = 'cm', useDingbats = F)
+```
+
+# Listener ablation studies (Fig. 4C)
+
+```{r}
+listener.adapt <- read_csv('../data/model_output/listener_lesions.csv') %>%
+  #unite(loss, ds_type, loss) %>%
+  mutate(targetProb = exp(target_score)) 
+
+listener.adapt %>%
+  mutate(rep_num = rep_num + 1) %>%
+  filter(ds_type == 'NP') %>%
+  mutate(loss = case_when(loss == 'SCE+SKL+SR' ~ 'no contrastive loss',
+                          loss == 'SCE+SKL+LCE' ~ 'no local rehearsal',
+                          loss == 'SCE+SKL+SR+LCE' ~ 'full model',
+                          TRUE ~ 'no adaptation')) %>%
+  group_by(loss, rep_num) %>%
+  tidyboot_mean(targetProb, nboot = 10) %>%
+  ggplot(aes(x = rep_num, 
+             y = empirical_stat, 
+             color = loss)) +
+    geom_line() +
+  geom_hline(yintercept = 0.25, linetype = 'dotted') +
+    geom_errorbar(aes(ymax = ci_upper, ymin = ci_lower, group = loss), position='dodge',width = 0) +
+    geom_point() +
+    theme_few() +
+    ylim(0.24,1) +
+    theme_cowplot() +
+    scale_x_continuous(breaks = c(1,2,3,4,5,6)) +
+    scale_y_continuous(breaks = c(.25,.5,.75, 1), limits = c(0.25,1)) +
+    ylab('probability of choosing target') +
+    xlab('repetition #') +
+    scale_color_colorblind() +
+    theme(aspect.ratio = 1.5)# legend.position = "none")
+
+ggsave('../writing/figures/listenerLossLesion.pdf', height = 7, width = 10, units = 'cm', useDingbats = F)
+```
+
+```{r}
+library(lmerTest)
+listener.adapt %>%
+  mutate(loss = fct_relevel(loss, "SCE+SKL+SR+LCE")) %>%
+  mutate(rep_num = rep_num - 3.5) %>%
+  glmer(correct ~ loss + rep_num + (1 + rep_num | gameid), 
+        family = 'binomial',
+        data = .) %>%
+  summary()
+```
+
+# Other random things
+
+
+
+```{r}
+listener.adapt %>% 
+  ggplot(aes(x = loss, color = loss, y = target_score)) +
+    geom_boxplot(alpha = 0.3) +
+    ylab('P(target | utt)') +
+    theme_bw()
+```
+
+```{r}
+listener.adapt %>%
+  group_by(loss, rep_num) %>%
+  tidyboot_mean(d, nboot = 10) %>%
+  ggplot(aes(x = rep_num, 
+             y = empirical_stat, 
+             shape = loss,
+             color = loss == 'fixed')) +
+    geom_line() +
+    geom_point() +
+    theme_bw() +
+    ylab('P(caption)') +
+    xlab('repetition #')
+```
+
+```{r}
+listener.adapt %>%
+  group_by(gameid, target) %>%
+  mutate(diff_cap_prob = cap_score - lag(cap_score),
+         diff_target_prob = target_score - lag(target_score)) %>%
+  ungroup() %>%
+  ggplot(aes(x = loss, y=diff_target_prob, color = loss)) +
+      geom_boxplot() +
+      theme_bw() 
+```
+
+
+```{r}
+listener.adapt %>% 
+  mutate(targetProbBin = .05*floor(targetProb / .05) + 0.025) %>%  
+  group_by(targetProbBin, loss) %>%
+  tidyboot_mean(correct) %>%
+  ggplot(aes(x = targetProbBin, y = empirical_stat, color = loss)) +
+    geom_point() +
+    geom_line() + 
+    theme_bw()
+```
+
+```{r}
+listener.adapt %>%
+  group_by(gameid, target) %>%
+  filter(loss %in% c('SCE+SKL+LCE', 'SCE+SKL')) %>%
+  mutate(diff_cap_prob = cap_score - lag(cap_score),
+         diff_target_prob = target_score - lag(target_score)) %>%
+  lmer(diff_target_prob ~ loss*diff_cap_prob + (1 | gameid),
+       data= .) %>%
+  summary()
+```
+
+# Listener adaptation to human speaker loss (computational experiments)
+
+```{r}
+listener.loss <- read_csv('../data/model_output/listener_accuracy/loss0.csv') %>%
+  select(-loss_term_weight) 
+
+listener.loss %>%
+  group_by(loss_term, loss_terms, trial_num,step) %>% 
+  summarize(mean_loss = mean(loss)) %>%
+  unite(time_unit, trial_num, step, sep = '') %>%
+  group_by(loss_term, loss_terms) %>%
+  mutate(time_unit = fct_inorder(factor(time_unit))) %>%
+  mutate(time_unit = as.numeric(time_unit)) %>%
+  ggplot(aes(x = time_unit, 
+             y = mean_loss, 
+             color = loss_term)) +
+    geom_line() +
+    #geom_ribbon(aes(ymax = ci_upper, ymin = ci_lower, group = loss), alpha = .1, color = NA) +
+    facet_wrap(~ loss_terms) +
+    #geom_point() +
+    theme_few() +
+    geom_vline(xintercept = seq(0, 200, 8*4), alpha = 0.1) +
+    #ylim(0,2) +
+    #scale_x_continuous(breaks = c(1,2,3,4,5,6)) +
+    ylab('raw loss') +
+    xlab('step #') +
+    scale_color_colorblind() +
+    #theme(aspect.ratio = 1.5, legend.position = "none")
+    theme(aspect.ratio = 1.5)
+
+#ggsave('lossComparison.pdf', height = 7, width = 10, units = 'cm', useDingbats = F)
+```
+

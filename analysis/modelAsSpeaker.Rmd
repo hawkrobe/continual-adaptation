@@ -1,0 +1,121 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(lme4)
+library(tidyboot)
+library(jsonlite)
+library(ggthemes)
+```
+
+# Reduction for data augmentation ablations
+
+```{r}
+speaker.adapt <- read_csv('../data/model_output/speaker_lesions.csv') %>%
+  mutate(num_words =str_count(caption, "\\S+")) %>%
+  filter(speaker_model != 'S1') 
+
+speaker.adapt.toplot <- speaker.adapt %>%
+  unite(data_augmentation, speaker_model, ds_type, cost_weight) %>%
+  filter(data_augmentation %in% c('S0_NP_0', 'S0_none_0', 'S0_with_cost_none_1', 
+                                  'S0_with_cost_none_10', 'S0_with_cost_none_0.5')) %>%
+  mutate(data_augmentation = case_when(data_augmentation == 'S0_NP_0' ~ 'compositional augmentation', 
+                                       data_augmentation == 'S0_with_cost_none_10' ~ 'pure cost (b = 10)',
+                                       data_augmentation == 'S0_with_cost_none_1' ~ 'pure cost (b = 1)',
+                                       data_augmentation == 'S0_with_cost_none_0.5' ~ 'pure cost (b = 0.5)',
+                                       data_augmentation == 'S0_none_0' ~ 'none'),
+         rep_num = rep_num + 1) %>%
+  group_by(data_augmentation, rep_num) %>%
+  tidyboot_mean(num_words, nboot = 100, na.rm=T) 
+
+speaker.adapt.toplot %>%
+  ggplot(aes(x = rep_num, 
+             y = empirical_stat, 
+             color = data_augmentation,
+             group = data_augmentation)) +
+    geom_line() +
+    geom_ribbon(aes(ymax = ci_upper, ymin = ci_lower), alpha = .05, color = NA) +
+    geom_point() +
+    #facet_grid(. ~ data_augmentation) +
+    theme_few() +
+    scale_x_continuous(breaks = c(1,2,3,4,5,6)) +
+    ylab('# words') +
+    xlab('repetition #') +
+    ylim(0, 10) +
+    theme(aspect.ratio = 1.5, legend.position = "none") +
+    scale_color_manual(values = c('#e69f00', '#333333', '#2171b5', '#6baed6', '#9ecae1'))
+
+ggsave('../writing/figures/speakerLesion.pdf', height = 7, width = 10, units = 'cm', useDingbats = F)
+```
+
+# Reduction for listener term & S0 vs. S1 ablations 
+
+```{r}
+read_csv('../data/model_output/prag_speaker.csv') %>%
+  group_by(speaker_model, speaker_loss, round_num) %>%
+  tidyboot_mean(num_words) %>%
+  ggplot(aes(x = round_num, 
+           y = empirical_stat, 
+           color = speaker_model,
+           linetype = speaker_loss)) +
+    geom_line() +
+    #geom_ribbon(aes(ymax = ci_upper, ymin = ci_lower, group = ds_type), alpha = .05, color = NA) +
+    geom_point() +
+    theme_few() +
+    scale_x_continuous(breaks = c(1,2,3,4,5,6)) +
+    ylab('# words') +
+    xlab('repetition #') +
+    scale_color_colorblind() 
+    #theme(aspect.ratio = 1.5, legend.position = "none")
+
+```
+
+# Differentiation for listener term & S0 vs. S1 ablations 
+
+```{r}
+stopwords_regex = paste(c('ive', tm::stopwords('SMART')), collapse = '\\b|\\b')
+stopwords_regex = paste0('\\b', stopwords_regex, '\\b')
+
+matches <- read_csv('../data/model_output/prag_speaker.csv') %>%
+  mutate(content = tolower(caption),
+        # content = stringr::str_replace_all(content, stopwords_regex, ""),
+         content = str_squish(gsub("[[:punct:]]", "", content))) %>%
+  group_by(speaker_model, speaker_loss, i_iter) %>%
+  do(., mutate(., targetID = as.integer(group_indices(., target)))) %>%
+  select(speaker_model, speaker_loss, i_iter, round_num, targetID,content) %>%
+  group_by(speaker_model, speaker_loss, i_iter, round_num) %>%
+  tidybayes::gather_pairs(targetID, content, row = 'target1', col = 'target2', x = 'utt1', y = 'utt2') %>%
+  rowwise() %>%
+  mutate(matchRate = length(intersect(strsplit(utt1, " ")[[1]], strsplit(utt2, " ")[[1]])),
+         utt1Length = length(strsplit(utt1, " ")[[1]]),
+         utt2Length = length(strsplit(utt2, " ")[[1]])) 
+  
+matches.summary <- matches %>% 
+  group_by(speaker_model, round_num, speaker_loss) %>%
+  tidyboot::tidyboot_mean(matchRate >=1)
+
+matches.summary %>%
+  ungroup() %>%
+  mutate(`adaptation objective` = ifelse(speaker_loss == 'SCE+SKL+SR', 
+                                         'no listener likelihood term',
+                                         'full loss'),
+         `speaker model` = ifelse(speaker_model == 'S0', 'basic beam search',
+                                'pragmatics at production')) %>%
+  filter(speaker_model == 'S0') %>%
+  ggplot(aes(x = round_num, y = empirical_stat, color = `adaptation objective`)) +
+    geom_line() +
+    geom_point() +
+    geom_ribbon(aes(ymin = ci_lower, ymax = ci_upper, group = `adaptation objective`), alpha = 0.05, color = NA) +
+    scale_x_continuous(breaks = c(1,2,3,4,5,6)) +
+    ylab('overlap') +
+    xlab('repetition #') +
+    scale_color_colorblind() +
+    theme_cowplot() +
+    guides(color = F) +
+    theme(aspect.ratio = 1.5)
+
+ggsave('../writing/figures/differentiation.pdf', height = 7, width = 10, units = 'cm', useDingbats = F)
+```
