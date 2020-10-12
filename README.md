@@ -2,7 +2,7 @@
 
 * implementation of continual learning for repeated reference is in `/models/`
 * interactive, web-based reference game w/ model is in `/behavioral_experiments/`
-* experiments on model behavior are in `/computational_experiments/`
+* experiments on model behavior are in `/listener_experiments/` and `/speaker_experiments/`
 * csv output from both kinds of experiments goes in `/data/`
 * scripts for analyzing/visualizing data from experiments are in `/analysis/`
 * paper is in `/writing/`
