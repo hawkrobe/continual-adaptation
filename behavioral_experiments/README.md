@@ -10,7 +10,7 @@ To run our experiments, several things are needed:
 
 Check-list before running expeirment:
 
-1) navigate to `/behavioral_experiments/` and run `npm install` on web server to install dependencies, call `unzip ./src/coco_imgs.zip`, then `node run build` to launch experiment
+1) navigate to `/behavioral_experiments/` and run `npm install` on web server to install dependencies, call `unzip ./src/local_imgs.zip`, then `node run build` to launch experiment
 
 2) call `store.js` to launch database process on mongo port
 
