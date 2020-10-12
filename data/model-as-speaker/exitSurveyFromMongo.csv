@@ -1,0 +1,53 @@
+iterationName,gameid,time,score,confused,strategy,comments,totalLength,ratePartner,nativeEnglish,score,role
+testing,9475-dad5ed1a-d420-42fe-8523-f49692fce984,1.569515735191e+12,48,yes,I just tried to match the pictures to the words,None,291740,liked,yes,48,listener
+testing,2837-8124bc31-8c9d-4fe6-a43f-837e43e2073f,1.569515896779e+12,46,yes,I just tried to figure out what the speaker said,,333907,okay,yes,46,listener
+testing,3861-fbb196ea-e53e-4bf7-9646-2b310ec8585b,1.569515975201e+12,48,yes,"I just picked the most likely picture for the description given,",n/a,325031,not much,yes,48,listener
+testing,3861-fbb196ea-e53e-4bf7-9646-2b310ec8585b,1.569515991222e+12,48,yes,"I just picked the most likely picture for the description given,",n/a,341075,not much,yes,48,listener
+testing,5591-629778b1-3efe-4329-bbc5-d0bbafa824d5,1.569516500251e+12,48,yes,Just click the one that most describes what the person said,No,303756,loved,yes,48,listener
+testing,8091-e8a7388c-fbd5-4602-9bd5-3cb2d1b772d6,1.569516778006e+12,42,yes,"I tried to remember how the robot described each picture,",,376142,okay,yes,42,listener
+testing,2851-0b69f8f5-1bfe-420e-89dc-b94b508c557a,1.569516796793e+12,46,yes,just matching the words with the pictures,no,359501,loved,yes,46,listener
+testing,8981-1127143d-2428-41e5-8c38-962a6e33af4b,1.569517793148e+12,48,yes,Click the picture with the keyword in the description,"No,",295504,okay,yes,48,listener
+testing,5829-ba956f5c-be08-425f-a37d-4158f7dc0291,1.569517918946e+12,44,yes,Paying attention to the clues,no,262678,liked,yes,44,listener
+testing,4582-42261908-7691-4bdb-aa90-378a73781351,1.569518251742e+12,48,yes,I just chose the picture that my partner described,,478561,liked,yes,48,listener
+testing,7013-33dc7622-3e82-4498-914a-a078881d0488,1.569518331531e+12,48,yes,just read through it,,454977,liked,yes,48,listener
+testing,5223-fff2a430-be9a-4df5-a696-739b86255eda,1.569518456951e+12,46,yes,look at the pictures and pick the one described,no,386612,okay,yes,46,listener
+testing,1321-b522f58b-f93a-47a4-a6e4-ec1e4b92c863,1.569518739473e+12,42,yes,My instincts,"No,",693917,liked,yes,42,listener
+testing,6465-6c7596c3-4de6-4aa3-9fb2-5242709945ed,1.569519023823e+12,48,yes,Try to find the keywords,no,398491,liked,yes,48,listener
+testing,4233-503ce1ea-4a66-4a5b-8482-022cd8a72e2e,1.56951918812e+12,48,yes,No need any strategy simply click what on the speaker told,none,379764,loved,yes,48,listener
+testing,2694-17c5d997-a1cf-42f3-ae5b-2cdca581d2bf,1.569519489746e+12,48,yes,"Try to figure out what the speaker was trying to have me select,","Fun experiment overall! I enjoyed, Great algorithm",317841,loved,yes,48,listener
+testing,5642-0ffb237e-082b-48b9-9a35-f1f63fe07c05,1.569519775913e+12,48,yes,"No real strategy to speak of, the descriptions were always clear enough to easily pick a picture",The AI described a plate of food as a plate with plates of food (not accurate but still works),395347,okay,yes,48,listener
+testing,6796-63b3c9f8-d3cf-4aac-9f36-83276d420bbe,1.569519933972e+12,48,yes,"I had no strategy, It was easy,",Nope,408495,okay,yes,48,listener
+testing,1912-e9dd8f6e-eadf-4b7f-9d0d-ef16d16b7af9,1.569520006897e+12,48,yes,"I just used my partner's description the best I could,","I did not,",426203,okay,yes,48,listener
+testing,2343-38478175-fc28-4592-abaa-e81e3814e392,1.569520016059e+12,44,yes,"Interpret partner literally,",no,375881,okay,yes,44,listener
+testing,2879-79d26dab-ca17-4084-85c1-014d527e6523,1.569520644589e+12,44,yes,looked for obvious things the robot might point out even if they were not entirely correct,no,369536,okay,yes,44,listener
+testing,3158-d31b4e1b-481a-44d9-9803-946faf6e6147,1.569520914461e+12,48,yes,I had no strategy- I just followed direction,no comments,484397,okay,yes,48,listener
+testing,4060-a9a6e6a9-58c0-4433-8c08-c94f1d1e6ada,1.569520964773e+12,44,yes,"I tried to follow the descriptions that the robot gave,",None,464117,loved,yes,44,listener
+testing,4728-a8e24453-586d-4175-be70-967750c73f7a,1.569520993136e+12,48,yes,read closely,no,461297,okay,yes,48,listener
+testing,9976-ff3b9ca8-66f2-40cf-986f-a62e768a57f7,1.569521355757e+12,48,yes,there is no strategy it is easy,Bonus? what was the point in even caring?,294393,okay,yes,48,listener
+testing,8708-0c363bc3-6e17-4bc3-9578-b30faba96700,1.569522188228e+12,48,yes,finding the right description,no,361002,okay,yes,48,listener
+testing,7789-a0cfcb1e-b2a5-4509-8955-2585df0708b9,1.569522276883e+12,48,yes,Choose the closest match to the description provided,no,343162,okay,yes,48,listener
+testing,3339-78d90474-beb3-4825-8b9c-9fb70d075f57,1.569522574523e+12,28,yes,tried to figure out what description went where,I did notice that it was describing something other then what I was looking at,385294,liked,yes,28,listener
+testing,4919-65c169f6-6336-454c-82b6-957cc58f0816,1.569522708643e+12,34,yes,Conveying messages in a clear way,No,358562,liked,yes,34,listener
+testing,8451-9386b72d-8140-49d3-9f0c-6fa81fe69e29,1.569522974661e+12,46,yes,"this was super easy , I made one mistake not knowing what the robot meant by close up but after that it continued to describe the bathroom as closeup ,",,532533,loved,,46,listener
+testing,7310-996a8da0-2e1d-4317-a96c-ff089464daf6,1.569523153454e+12,40,yes,"I looked at what was visually represented by the description - even though it may be wrong, what closely resembled the description was what I chose,",,266003,okay,no,40,listener
+testing,4539-0c4d1ca7-e349-4e55-b559-0d80deb49062,1.569523382209e+12,48,yes,I followed the directions,no,297868,loved,yes,48,listener
+testing,4632-de699b40-6b10-412f-99d3-29195cfc99c3,1.569523545722e+12,42,yes,"I picked the best one, The robot was not able to accurately describe anything about the microwave","Robot had issues with the microwave image and sometimes just said ""image"" as the description",354190,not much,yes,42,listener
+testing,1933-6dafb043-59ea-4578-8cf2-a9f10516fc5c,1.56952374073e+12,46,yes,match words as close to picture as possible,,284604,okay,yes,46,listener
+testing,1677-ae6720ae-7822-42ba-b1b5-bd9604e9feb1,1.569524112953e+12,48,yes,Clicked what was described,no,253594,okay,yes,48,listener
+testing,3586-55fd582c-50ec-4ff3-beaa-9cb13347c922,1.569524722058e+12,36,yes,AI trying to learn what is in photos,,313139,okay,yes,36,listener
+testing,3259-19cac371-8877-4719-ad5d-980a5dce6812,1.569524797705e+12,46,yes,did my best to guess what was being described,no,332366,liked,yes,46,listener
+testing,9412-a11db544-058f-472c-aa1c-1dc20c2d8819,1.569525337087e+12,48,yes,I didn't really have one,no,354787,loved,yes,48,listener
+testing,3436-e04eebeb-4548-496d-be61-742f0e1ac6d1,1.569525471401e+12,36,yes,"Just reading the text,",,264118,okay,yes,36,listener
+testing,0077-45892832-2657-410b-a0ea-4262ae7b2986,1.56952584161e+12,48,yes,"Selecting the target image as quickly as possible,","No,",338380,loved,yes,48,listener
+testing,3843-01ce87c0-35ee-48a5-8851-3e89a0bbeae3,1.569525965004e+12,46,yes,"I listened intently to the speaker's messages, choosing each option that fit the description best,","No issues,",317383,okay,,46,listener
+testing,3196-886a6319-cbab-4661-b909-d7eda28930cd,1.569527180483e+12,38,yes,"I would try to figure out based off of previous choices,",,355435,okay,yes,38,listener
+testing,2457-233b78f7-a193-4aee-a5f1-b8d389e488a0,1.569527423271e+12,46,yes,"Read what the robot typed and guess which picture they are giving a characteristic of (visual),",n/a,345472,okay,yes,46,listener
+testing,5867-b501241f-e164-4f5d-9565-20ea355d50da,1.56952792713e+12,48,yes,"The speaker described the pictures well, so I relied on their description,","Everything worked well,",300940,liked,yes,48,listener
+testing,3657-4fa4b7f4-e752-4827-be8d-1bdb299ae468,1.569528329266e+12,42,yes,I tried to use the past choices to understand what I was looking for,no,322130,liked,,42,listener
+testing,4961-ad08a773-527d-4063-b76b-f1a01db1df41,1.569529130722e+12,40,yes,"Two of the pictures were being called the same thing, so I started alternating in a seemingly correct order,","None,",361787,okay,,40,listener
+testing,7336-a1730a58-c28c-4d92-9bf5-fe573555f734,1.569529232319e+12,48,yes,"No strategy involved, The descriptions were straightforward enough",,393865,okay,yes,48,listener
+testing,1414-c05a230a-aa22-48a5-a051-82f90277784c,1.569529384992e+12,48,yes,"I didn't have a strategy, I just click on the correct answer,","At the beginning of the task you told me that my partner was a robot,",460074,okay,yes,48,listener
+testing,1215-ccb92088-f223-4e42-8604-86292267fc22,1.569529931776e+12,44,yes,"Try and see what description matches the picture,",no,305530,liked,yes,44,listener
+testing,7746-d6d6a18b-017d-418d-baf3-945560c1abd9,1.569530145295e+12,40,yes,"Just read the description and look at the photos,","None,",435815,loved,yes,40,listener
+testing,3347-dcf31fab-ba8b-49c7-9085-d38d7a1ace28,1.569530527758e+12,48,yes,"I tried to understand what they were trying to convey as closely as possible,",no,355177,loved,yes,48,listener
+testing,0793-b089b014-9136-4795-96ce-3fa299219098,1.569532573722e+12,48,yes,"No specific strategy other than looking for the most likely picture for the description and remembering which picture worked with each description for repeated descriptions,",no problems,346948,liked,yes,48,listener

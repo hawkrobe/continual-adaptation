@@ -1,0 +1,114 @@
+iterationName,gameid,time,score,confused,strategy,comments,totalLength,ratePartner,nativeEnglish,score,role
+pilot0,0443-13705438-9a51-4cda-a0da-d3ca01918ceb,1.569375052189e+12,30,no,asdf,asdf asdf asdf,224520,okay,no,30,listener
+pilot0,6189-ae00a229-34d2-4133-a5ba-5a13415cab20,1.569375628445e+12,0,yes,"No strategy, it disconnected and I was told to fill this out and submit",,52344,not much,yes,0,listener
+pilot0,6933-930ec315-e0cc-438e-8669-c5bc1964ef51,1.569376277951e+12,48,yes,keep it simple,no,351032,liked,yes,48,speaker
+pilot0,6933-930ec315-e0cc-438e-8669-c5bc1964ef51,1.569376314557e+12,48,yes,didn't need one because descriptions were very good,no,354683,loved,yes,48,listener
+pilot1,7954-a3e02357-41bf-43db-a44f-90093c66a8ad,1.569424994415e+12,48,yes,to describe the focus object in detail,,557824,loved,yes,48,speaker
+pilot1,7954-a3e02357-41bf-43db-a44f-90093c66a8ad,1.569425032949e+12,48,yes,It was just going with whatever the person describe in the pictures to the best of my ability,Nope,366264,loved,yes,48,listener
+pilot1,7999-06716732-8369-4776-be65-3c1e214eaf13,1.569425647834e+12,48,yes,just read what they said,,253597,loved,yes,48,listener
+pilot1,7999-06716732-8369-4776-be65-3c1e214eaf13,1.569425775482e+12,48,yes,describe the main focus of the photo,"There was no mention of a Bonus in the instructions, but there was a Bonus tally shown on the main page with the photos, Now on the last page there is no mention of a Bonus, This is confusing, Is a Bonus going to be paid on this HIT or not?",594187,loved,yes,48,speaker
+pilot1,3921-97d27b98-9421-40d5-ac4f-4619072c079d,1.569426045614e+12,46,yes,"I wrote sentences,",None,584604,loved,yes,46,speaker
+pilot1,3921-97d27b98-9421-40d5-ac4f-4619072c079d,1.569426076791e+12,46,yes,"I just picked what the other person might be talking about,",No,524466,liked,yes,46,listener
+pilot1,0813-9aea9ad8-1dca-4250-b203-173235e21ae8,1.5694261333e+12,48,yes,I just followed directions,no,250986,loved,yes,48,listener
+pilot1,0813-9aea9ad8-1dca-4250-b203-173235e21ae8,1.569426175884e+12,48,yes,"Quick simple descriptions with the main object I see in the picture,",No,352802,liked,yes,48,speaker
+pilot1,4059-677797ea-5123-47c2-803b-9618309cbc12,1.569426220232e+12,40,yes,I tried to be creative without being super direct,no,591347,okay,yes,40,speaker
+pilot1,4059-677797ea-5123-47c2-803b-9618309cbc12,1.569426231316e+12,40,yes,i tried to pick the right picture,no,426648,okay,yes,40,listener
+pilot1,5785-37d55de2-a5a5-4915-8e68-317b898e3399,1.569426464594e+12,48,yes,"I just tried my best with my descriptions,",No,495567,loved,yes,48,speaker
+pilot1,5785-37d55de2-a5a5-4915-8e68-317b898e3399,1.569426466772e+12,48,yes,As a listener,Nope,414251,loved,yes,48,listener
+pilot1,4361-a85339ed-f99d-43ef-8128-e81e0c69fba8,1.569427545375e+12,48,yes,"I tried to give as much detail as possible,",NO,677194,loved,yes,48,speaker
+pilot1,4361-a85339ed-f99d-43ef-8128-e81e0c69fba8,1.569427564356e+12,48,yes,"I just read the message from the speaker, made sure I understood it, then clicked accordingly,",N/A,386957,okay,yes,48,listener
+pilot1,0701-69b94b8e-8708-4465-92b0-ff0db2cced7c,1.569434558437e+12,12,yes,"I just tried to select the photograph that most closely matched their hints,",,208498,liked,yes,12,listener
+pilot1,4088-1d8069d6-4e6e-44a0-97a6-5ace6a80a112,1.569434736746e+12,48,yes,Simply click what the person says,,255701,loved,yes,48,listener
+pilot1,4088-1d8069d6-4e6e-44a0-97a6-5ace6a80a112,1.56943474608e+12,48,yes,"To use the simplest word to describe the scene,",No,373514,loved,yes,48,speaker
+pilot1,1730-7aee1f3a-9dba-4e57-a886-db344f27c77d,1.569435027143e+12,48,yes,I just chose what the speaker was describing,no,409582,liked,yes,48,listener
+pilot1,1730-7aee1f3a-9dba-4e57-a886-db344f27c77d,1.569435047425e+12,48,yes,"Made sure I stuck to the same words, Made sure that something in the picture would show up,","none,",462200,loved,yes,48,speaker
+pilot1,4908-85c705ab-2a67-4b92-ae66-a85285f169e3,1.569435232707e+12,48,yes,"I tried to click on the picture they were describing,",No,194208,loved,yes,48,listener
+pilot1,3326-36843e03-1929-4e74-b5d2-7db176ba8fa9,1.569435236662e+12,48,yes,describe the scene,none,479760,loved,yes,48,speaker
+pilot1,3326-36843e03-1929-4e74-b5d2-7db176ba8fa9,1.569435252768e+12,48,yes,read what they wrote and chose the likliest,no,327148,loved,yes,48,listener
+pilot1,4908-85c705ab-2a67-4b92-ae66-a85285f169e3,1.569435260804e+12,48,yes,"I described the images in more detail at first, After my partner got them the first time, I made my description more compact,",no problems,240110,loved,yes,48,speaker
+pilot1,3902-3a004d31-accc-41ae-b396-d606ffdf9b23,1.569435421527e+12,48,yes,None,None,235466,loved,yes,48,listener
+pilot1,3902-3a004d31-accc-41ae-b396-d606ffdf9b23,1.569435421917e+12,48,yes,to be as quick and efficient as possible,"No, That was interesting!",296625,loved,yes,48,speaker
+pilot1,8080-4ce1967e-d0b7-4e15-a542-8b5ff5c89ca1,1.569435483094e+12,46,yes,Just describe the image,,286908,liked,yes,46,speaker
+pilot1,8080-4ce1967e-d0b7-4e15-a542-8b5ff5c89ca1,1.569435490657e+12,46,yes,"pick the photo that was described,",no,228884,loved,yes,46,listener
+pilot1,6001-311b4147-bb61-45ad-98ff-6d9a25637bd1,1.569435683655e+12,48,yes,just listening to the speaker and picking the corresponding picture,no,334932,loved,yes,48,listener
+pilot1,6001-311b4147-bb61-45ad-98ff-6d9a25637bd1,1.569435697802e+12,48,yes,i just described as much as i need to in the picture and when he got it right i could shorten it since he knew what it was,everything was fine,387659,loved,yes,48,speaker
+pilot1,4705-c3ce6f9d-4a49-4a11-ba3d-3dda56542bd8,1.569435750088e+12,48,yes,"No strategy, I explained",no,385718,liked,yes,48,speaker
+pilot1,4705-c3ce6f9d-4a49-4a11-ba3d-3dda56542bd8,1.569435783454e+12,48,yes,"I just responded to the ques,","None, thank you,",418004,liked,yes,48,listener
+pilot1,1334-bf052dd0-77c2-4a3b-ba41-71a9ad4801ad,1.569435859385e+12,48,yes,"Just choosing the picture based on their word or description,","None,",383528,okay,yes,48,listener
+pilot1,1334-bf052dd0-77c2-4a3b-ba41-71a9ad4801ad,1.569435861775e+12,48,yes,short and simple,none,429146,okay,yes,48,speaker
+pilot1,7415-ca07de07-dc0a-47ed-89df-4109b96cd933,1.569435976325e+12,48,yes,"Started off being detailed, Then not so much detail after a bit","No problems at all,",494766,liked,yes,48,speaker
+pilot1,7415-ca07de07-dc0a-47ed-89df-4109b96cd933,1.569436032674e+12,48,yes,"Picking the right photo based on the description,",None,499647,not much,yes,48,listener
+pilot1,3798-fd6ee16f-ac8d-4b09-a1b2-5c1529c4ae66,1.569436071316e+12,46,yes,"Describe photo in an easy to comprehend way to my listener,","No problems encountered, Very fun survey overall!, Thanks for having me, I enjoyed, This definitely kept me more engaged than most experiments, Big props to whoever created, keep it up and I hope to see more of your surveys on the Mturk platform,",394755,loved,yes,46,speaker
+pilot1,3798-fd6ee16f-ac8d-4b09-a1b2-5c1529c4ae66,1.569436096174e+12,46,yes,just reading what my partner describes,"My power went out for a moment and I had to get my screen back so I apologize I missed some,",411840,loved,yes,46,listener
+pilot1,1268-1ad669ae-5795-462b-8f71-2292c6ed84f0,1.569436109848e+12,48,yes,"pick the picture the speaker is writing,",no,462914,liked,yes,48,listener
+pilot1,1268-1ad669ae-5795-462b-8f71-2292c6ed84f0,1.569436113965e+12,48,yes,"pick the picture the speaker is writing,",no,467033,liked,yes,48,listener
+pilot1,7932-935e7021-e7f0-49b8-83cc-3c9f03ea876d,1.569436137447e+12,48,yes,to be as accurate in descriptions as possible but not be too repetitive,nope,486121,loved,yes,48,speaker
+pilot1,1268-1ad669ae-5795-462b-8f71-2292c6ed84f0,1.569436140106e+12,48,yes,"I tried to describe the most obvious feature of the photograph,","No, Everything went well,",530682,liked,yes,48,speaker
+pilot1,7932-935e7021-e7f0-49b8-83cc-3c9f03ea876d,1.569436150372e+12,48,yes,I followed my partners description carefully,NO,475954,liked,yes,48,listener
+pilot1,4447-4e47d643-3ccc-443d-8784-6b5bcb39096a,1.569436150571e+12,48,yes,Stay consistent if something seemed to be working,No,431799,loved,yes,48,speaker
+pilot1,4447-4e47d643-3ccc-443d-8784-6b5bcb39096a,1.569436170419e+12,48,yes,"Clicking the correct image,",,443567,okay,yes,48,listener
+pilot1,1268-1ad669ae-5795-462b-8f71-2292c6ed84f0,1.569436200957e+12,48,yes,"pick the picture the speaker is writing,",no,554022,liked,yes,48,listener
+pilot1,0803-af34ea1d-0b4f-4d2b-af03-668428b0c6f3,1.56943622323e+12,0,confused,"I did not play because I was not able to type in the text box, I typed ""bear"" but the word bear did not show up,",20 minutes is too short,489843,not much,yes,0,speaker
+pilot1,6869-1425683a-cd6d-46ca-9058-a3ed52598a81,1.569436352336e+12,48,yes,They described adequately and I clicked the pciture,No,464366,liked,yes,48,listener
+pilot1,6869-1425683a-cd6d-46ca-9058-a3ed52598a81,1.569436377238e+12,48,yes,"I described the most obvious things that stand out,","It worked just fine,",551072,liked,yes,48,speaker
+pilot1,3494-cc10185a-3b83-4258-8d11-fa44108df4c9,1.569436581167e+12,48,yes,"As fast as possible, write description of image,",,262399,loved,yes,48,speaker
+pilot1,3494-cc10185a-3b83-4258-8d11-fa44108df4c9,1.569436596826e+12,48,yes,"I relied on my partner to tell me what the picture was and I selected it based on what they said to me,",I did not notice any problems,234959,loved,yes,48,listener
+pilot1,8389-e7cc243b-4359-47c1-9ece-cb9a7777a5e3,1.569436620754e+12,48,yes,Click what they tell me to click,n/a,388072,loved,yes,48,listener
+pilot1,8389-e7cc243b-4359-47c1-9ece-cb9a7777a5e3,1.569436662742e+12,48,yes,"I just described the picture,",n/a,639411,loved,yes,48,speaker
+pilot1,5849-6f7a6ca5-cf65-4795-aa1d-63880f052c90,1.56943709567e+12,48,yes,listened to the speaker,,291521,loved,yes,48,listener
+pilot1,5849-6f7a6ca5-cf65-4795-aa1d-63880f052c90,1.569437122176e+12,48,yes,"I started using one word answers to be more efficient,",no,350491,liked,yes,48,speaker
+pilot1,0554-fa84f59d-0bb2-472e-9826-47f9f5ad3465,1.569437429364e+12,48,yes,fewest possible words on prominent object,No,305343,loved,yes,48,speaker
+pilot1,0554-fa84f59d-0bb2-472e-9826-47f9f5ad3465,1.569437440199e+12,48,yes,just pay attention to what my the speaker was describing,no,234441,liked,yes,48,listener
+pilot1,8906-021cbc0b-d9d9-4c10-b19e-1890ca182702,1.569437684214e+12,46,yes,Tried to be very literal with my descriptions,,279545,liked,yes,46,speaker
+pilot1,8906-021cbc0b-d9d9-4c10-b19e-1890ca182702,1.569437718809e+12,46,yes,click the right picture,I felt sorry for the human,266527,loved,yes,46,listener
+pilot1,5707-35bf12a6-7314-450a-a376-ba872dde571f,1.569437876096e+12,48,yes,looked for what was described,no,276011,loved,yes,48,listener
+pilot1,4899-87217aa6-c8d7-481f-a539-111412b44671,1.56943788232e+12,16,yes,I just wrote about the highlighted target,,623554,okay,yes,16,speaker
+pilot1,5707-35bf12a6-7314-450a-a376-ba872dde571f,1.569437895472e+12,48,yes,Described the most obvious noun in the picture,no,442905,loved,yes,48,speaker
+pilot1,3387-6b91fa22-9d43-45ff-ad36-021d97ec75a9,1.569438222763e+12,48,yes,describe thoroughly at first then use shorthand afterwards,no problems,229121,loved,yes,48,speaker
+pilot1,3387-6b91fa22-9d43-45ff-ad36-021d97ec75a9,1.569438240563e+12,48,yes,"Just to follow the other players description,","no problems,",245689,loved,yes,48,listener
+pilot1,8173-7ce658f8-ae20-4253-9197-ab20f6136ed4,1.569438346616e+12,48,yes,"After doing descriptions of all 4 photos, I simplified them and made them quicker,",None,263511,liked,yes,48,speaker
+pilot1,8173-7ce658f8-ae20-4253-9197-ab20f6136ed4,1.569438351279e+12,48,yes,Follow exactly what the speaker was telling me which is the target,no,246784,loved,yes,48,listener
+pilot1,3803-ef2ce19a-c7d3-47e6-a9b3-dca4cf127fa1,1.569438422897e+12,48,yes,"I initially explained the target in detail, then used short phrases from then on,",no,403994,liked,yes,48,speaker
+pilot1,3803-ef2ce19a-c7d3-47e6-a9b3-dca4cf127fa1,1.569438434874e+12,48,yes,"I read the sentence and it was very straight forward,","Nope,",364975,loved,yes,48,listener
+pilot1,1679-a32cd71e-dd26-4032-976b-029058b31fd0,1.569438464435e+12,48,yes,uhhhhh follow directions,i really don't think my partner was another turker,333997,okay,yes,48,listener
+pilot1,1679-a32cd71e-dd26-4032-976b-029058b31fd0,1.569438542536e+12,48,yes,"It was pretty obvious, Just type in the description,","It was so simple and repetitive that I thought there must be some deception involved,",424133,okay,no,48,speaker
+pilot1,0567-48331ae9-fcc3-4742-af3c-99d7e9f48130,1.569438617278e+12,48,yes,"I tried explaining things in the simplest way possible,",Nope,291794,liked,yes,48,speaker
+pilot1,0567-48331ae9-fcc3-4742-af3c-99d7e9f48130,1.569438702049e+12,48,yes,"Just read what the describer person described about the picture and picked it,","Had no problems, and this was really fun!",322679,liked,yes,48,listener
+pilot1,7539-066552bd-d1a5-4b9a-b698-88cad9c8aebc,1.569438730314e+12,46,yes,Just click on whatever was described,N/A,246626,liked,yes,46,listener
+pilot1,7539-066552bd-d1a5-4b9a-b698-88cad9c8aebc,1.569438751987e+12,46,yes,"pick one or two words to ID each picture,",no,294329,liked,yes,46,speaker
+pilot1,1321-cdb7b93a-0cba-45fb-805e-6d57f23f8adc,1.569438786501e+12,48,yes,I just answered what I read,no,345804,loved,yes,48,listener
+pilot1,0298-ea0c58c3-9766-4b5f-8274-0250003f5b3a,1.569438800739e+12,48,yes,I paid close attention to what was in the picture and matched it to the word the person wrote,none,272413,okay,yes,48,listener
+pilot1,3922-18fd090a-ee1d-4fe9-9e61-4b1a4d30fe30,1.569438814671e+12,48,yes,Focus on the most prominent object and simplify it as much as possible,All good!,267338,loved,yes,48,speaker
+pilot1,1321-cdb7b93a-0cba-45fb-805e-6d57f23f8adc,1.569438814929e+12,48,yes,"Send a message that tells the other person the main object in the picture or what the person in the picture was doing,","No,",409351,loved,yes,48,speaker
+pilot1,0298-ea0c58c3-9766-4b5f-8274-0250003f5b3a,1.569438816244e+12,48,yes,"i tried to use the simplest and most obvious word and didn't hesitate to repeat the same word on subsequent trials,","i loved this experiment, it was fun,",291493,loved,yes,48,speaker
+pilot1,3922-18fd090a-ee1d-4fe9-9e61-4b1a4d30fe30,1.569438885711e+12,48,yes,"I just paid close attention to my partners messages,","No, this was fun, Thanks!",336930,loved,yes,48,listener
+pilot1,4654-7350be73-b8d2-4d91-ac10-844474e65da5,1.569438917473e+12,48,yes,click the right box,,263835,liked,yes,48,listener
+pilot1,1443-6d987205-e4a2-497a-be77-ce048a1991ad,1.569438921229e+12,48,yes,"I simply read the description, which was fairly detailed each time, and selected the corresponding picture,","No problems,  Thanks!",783181,liked,yes,48,listener
+pilot1,4654-7350be73-b8d2-4d91-ac10-844474e65da5,1.569438931094e+12,48,yes,repeated the same thing once I knew the other guy understood,No,367473,loved,yes,48,speaker
+pilot1,1443-6d987205-e4a2-497a-be77-ce048a1991ad,1.569438935585e+12,48,yes,"My strategy was to identify the most striking aspects of each photo that I felt the person would recognize the most,","The only issue I had was that the blue frame over the photo made it difficult to see what I was typing, so often I couldn't see if I'd spelled things correctly, Otherwise, I absolutely loved having the chance to participate in this study, Thank you so much!",804837,loved,yes,48,speaker
+pilot1,8672-3aab31d2-8fe1-4248-85e0-5a8287503c35,1.569438977821e+12,48,yes,"I just followed what my partner told me about the photo, It was easy,",None,710571,loved,yes,48,listener
+pilot1,8672-3aab31d2-8fe1-4248-85e0-5a8287503c35,1.569438982667e+12,48,yes,"To keep the principal subject as a key work like a dog, boat, etc,",no,770633,loved,no,48,speaker
+pilot1,5860-5a48cdcc-92c5-4cf8-a574-05b7705e534b,1.569439214126e+12,42,yes,Just tried to come up with creative descriptions,"No problems, Good luck with your research,",542911,loved,yes,42,speaker
+pilot1,5860-5a48cdcc-92c5-4cf8-a574-05b7705e534b,1.569439263145e+12,42,yes,"My strategy was to compare the pictures to how I imagine they would compare to the words and emotions used,",None,561265,liked,yes,42,listener
+pilot1,2713-ff0547e0-b7d5-435d-91de-e418af02fba7,1.56943937027e+12,48,yes,"Described what was in the photo,",No,383729,loved,yes,48,speaker
+pilot1,2713-ff0547e0-b7d5-435d-91de-e418af02fba7,1.569439375146e+12,48,yes,"Just listening to what the speaker says,","No,",358064,loved,yes,48,listener
+pilot1,4157-b9d95b72-4392-4a2a-8d32-c1809dffa255,1.569439445868e+12,48,yes,"I gave a full description early on and then gradually shortened them all to one word,","I did not,  I enjoyed this experiment,",300060,liked,yes,48,speaker
+pilot1,4157-b9d95b72-4392-4a2a-8d32-c1809dffa255,1.569439470516e+12,48,yes,"I looked for the specific item my partner told me to look for,","I like these, I wish we could do more than one of them,",317675,okay,yes,48,listener
+pilot1,8225-f6d1f194-09ef-4b7f-84f8-5d3efb7bb13b,1.569439482006e+12,48,yes,be as short as possible,,235888,loved,yes,48,speaker
+pilot1,8225-f6d1f194-09ef-4b7f-84f8-5d3efb7bb13b,1.569439558691e+12,48,yes,"My strategy was just paying close attention to the chat descriptions,","No, none at all,",301750,loved,yes,48,listener
+pilot1,2829-9ebe5ac1-a7a3-4e9b-8461-7503ee719088,1.569439589155e+12,48,yes,look at the obvious traits in the photo,no,435052,liked,yes,48,speaker
+pilot1,2829-9ebe5ac1-a7a3-4e9b-8461-7503ee719088,1.569439605609e+12,48,yes,"I was listening, so I just went with my best interpretation,",,437270,liked,yes,48,listener
+pilot1,5897-f4f8da7d-b08f-4ffb-b174-b41bfca17e22,1.569439718818e+12,46,yes,"I used a simple but understandable description,",no,452154,okay,yes,46,speaker
+pilot1,5897-f4f8da7d-b08f-4ffb-b174-b41bfca17e22,1.569439747363e+12,46,yes,Great strategy,"no problem, very nice hit",382188,loved,yes,46,listener
+pilot1,1885-a1ec96a9-7cb6-491c-8181-30b362295d41,1.569439767707e+12,48,yes,just try to guess,no,233982,liked,yes,48,listener
+pilot1,1885-a1ec96a9-7cb6-491c-8181-30b362295d41,1.569439788141e+12,48,yes,"two words that best described, then switched to one word",no,272719,loved,yes,48,speaker
+pilot1,6052-61df1262-aea4-4c5d-9254-d72d19e421b3,1.569439857313e+12,48,yes,,,469664,liked,yes,48,speaker
+pilot1,6052-61df1262-aea4-4c5d-9254-d72d19e421b3,1.569440028057e+12,48,yes,"The speaker described the picture and it was pretty easy to pick out which picture,",none,628143,liked,yes,48,listener
+pilot1,7326-0e4839f1-0939-4b2f-9ee2-601c8a3abcdb,1.569440249406e+12,46,yes,"I waited for the hint and did my best,",no,450806,okay,yes,46,listener
+pilot1,7326-0e4839f1-0939-4b2f-9ee2-601c8a3abcdb,1.569440300669e+12,46,yes,"I tried to give clues the listener would understand,",No problems,678563,loved,yes,46,speaker
+pilot1,8437-7a5d83c1-197b-4484-ab74-af92fecdd1bd,1.569440688151e+12,48,yes,"I read what my partner typed, It was easy based on what they said,",No,329298,loved,yes,48,listener
+pilot1,8437-7a5d83c1-197b-4484-ab74-af92fecdd1bd,1.569440689015e+12,48,yes,"Just describe the image as briefly as possible,","No and no,",346577,liked,yes,48,speaker
+pilot1,7224-b3ea4faa-2c5f-4f19-b4ee-c387dcc16577,1.569440839868e+12,48,yes,JUst to type as quickly as possible with few words,No,386607,loved,yes,48,speaker
+pilot1,7224-b3ea4faa-2c5f-4f19-b4ee-c387dcc16577,1.569440846852e+12,48,yes,just pick the right one,,330021,loved,yes,48,listener
+pilot1,4398-e2faa7db-1bfd-41c0-ad70-603ab3f4b21b,1.569441922666e+12,48,yes,just give simple descpription,"no, Good luck!",226729,loved,yes,48,speaker
+pilot1,4398-e2faa7db-1bfd-41c0-ad70-603ab3f4b21b,1.569441950405e+12,48,yes,I just listened,no issues,247572,loved,yes,48,listener

@@ -1,0 +1,118 @@
+iterationName,gameid,time,score,confused,strategy,comments,totalLength,ratePartner,nativeEnglish,score,role
+testing,6491-b402d171-eafa-40fe-9870-6e807c99c3e7,1.555223102071e+12,0,no,asdf asdf,asdf asdf,14347,okay,no,0,speaker
+testing,9030-993ee59f-4d78-4024-9798-4b4ef12adc99,1.555223163858e+12,0,no,asdf asdf,asdf asdf,15862,not much,yes,0,speaker
+testing,9030-993ee59f-4d78-4024-9798-4b4ef12adc99,1.555223185991e+12,0,,hahahaha no,,37200,,yes,0,listener
+testing,5051-472d790c-b519-4755-b62e-117ab73a728a,1.555311519257e+12,39,yes,tried to be informative,asdf asdf,239730,okay,yes,39,speaker
+pilot0,4240-37ed35c7-4ae0-467d-ab2a-790ea5c8defa,1.555353757782e+12,0,yes,Use the message to decide which photo it is referring to,n/a,52336,okay,yes,0,listener
+pilot0,4891-a9def950-a0fa-4d7b-a9ad-b34b5afac491,1.555354069608e+12,48,yes,Listen,,239463,okay,yes,48,listener
+pilot0,4891-a9def950-a0fa-4d7b-a9ad-b34b5afac491,1.555354085157e+12,48,yes,"Type a very obvious singular characteristic,","Seems way too easy,",258901,liked,yes,48,speaker
+pilot0,2635-51f6aa15-c301-4b51-b134-c229603e1be5,1.555354348182e+12,46,yes,"I described the pictures to the best of my ability,",n/a,508159,loved,yes,46,speaker
+pilot0,2635-51f6aa15-c301-4b51-b134-c229603e1be5,1.555354384479e+12,46,yes,"The speaker described the images really well, no guesses here","I'm not sure if my partner made a mistake in round 3, i clicked the right image",431593,loved,yes,46,listener
+pilot0,2575-894b8bf3-1a9e-40c8-acd2-9b3b73641f4a,1.55535446325e+12,48,yes,"described a few details that were specific to that photo, slowly used less and less words,",n/a,352277,loved,yes,48,speaker
+pilot0,2575-894b8bf3-1a9e-40c8-acd2-9b3b73641f4a,1.555354474746e+12,48,yes,"I would describe my strategy in this experiment as the listener is to mainly listen to what the speaker is describing and act on that description,",n/a,354087,loved,yes,48,listener
+pilot0,3677-c2eb2cdd-90e1-4d2a-b236-d5af2b615a54,1.555354620517e+12,16,yes,"I used shirts like specifying color to describe the photo,",,311928,loved,yes,16,speaker
+pilot0,4630-01759724-8083-43e0-b26e-813e70d82e1d,1.555354826346e+12,6,yes,Describing the colors in the pictures,My partner was disconnected for some reason,234244,liked,yes,6,speaker
+pilot0,6254-4d5fa351-4182-4e6b-ad6d-8b7177f48ad5,1.55535539505e+12,44,yes,"I tried to understand my partner's description as closely as possible,",,380211,loved,yes,44,listener
+pilot0,6254-4d5fa351-4182-4e6b-ad6d-8b7177f48ad5,1.555355416669e+12,44,yes,"Avoiding saying just ""upper-right"" since for some reason that exact same phrasing in isolation always confused them, even though it never came up in any other context,","No,",458996,okay,yes,44,speaker
+pilot0,5646-5e626710-a547-4f40-b725-b305d48bdc4f,1.555356076787e+12,48,yes,just listening to what they said,,385795,loved,yes,48,listener
+pilot0,5646-5e626710-a547-4f40-b725-b305d48bdc4f,1.555356077672e+12,48,yes,just describe cat in relation to monitor,,702842,liked,yes,48,speaker
+full_sample,6662-944feb90-3dcd-434a-9748-4a71417bb4d9,1.555373239158e+12,46,yes,just listening to what the speaker said to click,,324503,loved,yes,46,listener
+full_sample,6662-944feb90-3dcd-434a-9748-4a71417bb4d9,1.555373252995e+12,46,yes,using the same words over and over again and keeping it short,no,340500,loved,yes,46,speaker
+full_sample,2740-3a3091eb-b0ca-4ba2-8a33-8badb85efc06,1.555373263938e+12,48,yes,read the description of my partner,n/a,306093,okay,yes,48,listener
+full_sample,2740-3a3091eb-b0ca-4ba2-8a33-8badb85efc06,1.555373268821e+12,48,yes,Describing the picture in as few as words as possible so I could get done as fast as possible,No problems,343731,liked,yes,48,speaker
+full_sample,4831-98a48100-302d-41ce-ac49-08a3c2e88ea4,1.55537350206e+12,46,yes,i clicked on my best guesses based on the information the speaker was providing to me,none,358425,loved,yes,46,listener
+full_sample,4831-98a48100-302d-41ce-ac49-08a3c2e88ea4,1.555373508482e+12,46,yes,"Label the prominent item that other picture does not have,",,376003,loved,yes,46,speaker
+full_sample,8039-3abd4361-6c49-4d5c-b641-7b4f299bd07d,1.555373525227e+12,48,yes,Pick common things,NO,563038,okay,yes,48,speaker
+full_sample,2081-8e379b3a-c6df-4b3c-a596-87870350b8d5,1.555373525804e+12,48,yes,"I kept describing the pictures the same way since my partner understood them,",No,521336,loved,yes,48,speaker
+full_sample,8039-3abd4361-6c49-4d5c-b641-7b4f299bd07d,1.555373556162e+12,48,yes,"I clicked on the picture they described,","No,",563450,liked,yes,48,listener
+full_sample,2081-8e379b3a-c6df-4b3c-a596-87870350b8d5,1.555373562199e+12,48,yes,"I didn't really have one but it was pretty easy to pick the photos because the speaker was good at it,","No problems,",494049,loved,yes,48,listener
+full_sample,9054-eb075105-1a91-4d0e-a3dc-537ecf5751db,1.555373563425e+12,48,yes,I paid close attention,"Nope, none",250103,loved,yes,48,listener
+full_sample,9054-eb075105-1a91-4d0e-a3dc-537ecf5751db,1.555373570657e+12,48,yes,"Tried to distill it down to the distinguishing features in each image and only describe those to make it as clear as possible,",N/A,269441,loved,yes,48,speaker
+full_sample,5323-07d12ab3-2ddb-40d4-ae57-f802425c3276,1.555373608541e+12,48,yes,To follow the descriptions,,404505,loved,yes,48,listener
+full_sample,5323-07d12ab3-2ddb-40d4-ae57-f802425c3276,1.5553736132e+12,48,yes,"typing out descriptions, then shortening them as they got familiar",No,446909,loved,yes,48,speaker
+full_sample,5669-3ed75614-b025-42de-9d64-9c58dfaf1267,1.555373653386e+12,48,yes,"I kept my descriptions consistent,  I made mention of colors, especially,","No problems,  Thank you for the opportunity to take part in this experiment,",537379,loved,yes,48,speaker
+full_sample,5669-3ed75614-b025-42de-9d64-9c58dfaf1267,1.555373655839e+12,48,yes,following speakers description,no,534230,loved,yes,48,listener
+full_sample,3222-ffdea910-7cfd-4db5-a513-8c103c08e629,1.555373692282e+12,0,yes,"I did not get to start or finish the task since the other participant lost their connection,","The partner lost connection,",176637,not much,yes,0,listener
+full_sample,8610-21be0e2f-2005-4f65-b986-f4cb75b60147,1.555373796106e+12,48,yes,"I was the listener, so I read the speaker's hint and chose the photo that matched, The speaker's hints were all clear,","Not at all, Good luck with your research! :)",382519,liked,yes,48,listener
+full_sample,8610-21be0e2f-2005-4f65-b986-f4cb75b60147,1.555373813576e+12,48,yes,"Describing things that were easy to distinguish, Most were of STOP signs so I said writing on the STOP, one was upside down, and one was leaning to the right, There was another sign that was completely different which made that one easy,","No,",404039,loved,yes,48,speaker
+full_sample,5422-9323dec7-aef5-457a-9fce-bde223d83dd9,1.555374045631e+12,48,yes,Describing something unique to the photo,,506393,okay,yes,48,speaker
+full_sample,5463-bb90cd20-cc2c-428c-9775-d62716accacf,1.555374206415e+12,48,yes,"One word answers once we got used to each other,",,396780,loved,yes,48,listener
+full_sample,5422-9323dec7-aef5-457a-9fce-bde223d83dd9,1.555374234435e+12,48,yes,"Simply looking at the pictures and waiting for two explanations if I didn't know the answer at first,","Nope,",662171,loved,yes,48,listener
+full_sample,5463-bb90cd20-cc2c-428c-9775-d62716accacf,1.555374268425e+12,48,yes,"At first I focused on describing what would differentiate each picture,  Once I had a sentence that worked regularly I started cutting down to key words,  In the end I could say literally one word that was enough to mark each picture",none,551876,loved,yes,48,speaker
+full_sample,2552-40d189c7-231f-4831-b884-3d0090e5d256,1.555374375479e+12,48,yes,"simple and straight to the point,  Most obvious signs were given","no, but thank you!",546836,loved,yes,48,speaker
+full_sample,2552-40d189c7-231f-4831-b884-3d0090e5d256,1.55537437803e+12,48,yes,"It was pretty clear what other was describing, Matter of looking for it,","No problems,",502052,liked,yes,48,listener
+full_sample,1968-9b905f4d-748a-476f-a9af-c72cc85f8acc,1.555374442923e+12,0,yes,"Describe image as accurately as possible,",NO,114086,not much,yes,0,speaker
+full_sample,2421-6e995a34-20c9-4f55-be01-99f6707e0b72,1.555374912531e+12,48,yes,listening to the speaker,"None,",701385,okay,yes,48,listener
+full_sample,2421-6e995a34-20c9-4f55-be01-99f6707e0b72,1.555374956128e+12,48,yes,"I tried to initially describe the picture in detail - and once my partner selected the correct picture, I then tried to stay consistent but using less words","I didn't notice any problems,  Thanks for the opportunity to participate and good luck with your research!",843301,loved,yes,48,speaker
+full_sample,0727-2931b6d4-585e-4d15-9737-764bc0cb77f3,1.555375013939e+12,44,yes,poition,good task,1030535,loved,yes,44,speaker
+full_sample,5911-c08be92f-1030-471b-8767-1edfefe72125,1.555375069697e+12,48,yes,keep it simple,none,669293,liked,,48,speaker
+full_sample,0727-2931b6d4-585e-4d15-9737-764bc0cb77f3,1.555375082967e+12,44,yes,"My partner did a good job in describing the pictures, Once they described each picture, I knew which picture they meant when I saw it,","Everything was straightforward and I saw no problems, This task was interesting, thanks!",1039389,liked,yes,44,listener
+full_sample,5911-c08be92f-1030-471b-8767-1edfefe72125,1.555375099029e+12,48,yes,"Not much strategy to it -- read partner's description, click corresponding image,","Nothing comes to mind,",479982,okay,yes,48,listener
+full_sample,1462-0f5defdf-dbd8-48d7-abdc-f4be3269ba28,1.555375159813e+12,48,yes,"I just followed their instructions,",n/a,340234,liked,yes,48,listener
+full_sample,8922-46bdf5a5-05bd-41b2-90a2-8ea4b3a337f9,1.555375210945e+12,48,yes,describe the person and animal that was unique in each picture,no issues,366462,loved,yes,48,speaker
+full_sample,1462-0f5defdf-dbd8-48d7-abdc-f4be3269ba28,1.555375213346e+12,48,yes,"I used more descriptive clues in the beginning but shorten them as the game proceeded,",No,472707,loved,yes,48,speaker
+full_sample,8922-46bdf5a5-05bd-41b2-90a2-8ea4b3a337f9,1.555375225632e+12,48,yes,"I don't think I really had a strategy, The other player was good with their descriptions,",,379771,loved,yes,48,listener
+full_sample,4988-f5ae366f-0bf8-4fd0-815a-6acd982277d6,1.555375376286e+12,48,yes,"I just paid attention to what my partner was telling me,",,401311,loved,yes,48,listener
+full_sample,4988-f5ae366f-0bf8-4fd0-815a-6acd982277d6,1.555375391855e+12,48,yes,"My stategy was to describe the unique things in each picture,",no,426911,loved,yes,48,speaker
+full_sample,2088-b4bb52a2-3cd8-4303-85bf-ca3a90c6fd69,1.555375635889e+12,48,yes,Be as descriptive as possible,no,635796,loved,yes,48,speaker
+full_sample,2088-b4bb52a2-3cd8-4303-85bf-ca3a90c6fd69,1.555375639667e+12,48,yes,I speak english so it was rather easy,no,579752,loved,yes,48,listener
+full_sample,0788-0101405f-5745-4c8c-a882-d4eaf34b45fd,1.555375894958e+12,48,yes,I pointed out something in the selected photo that isn't in the others,No,445100,loved,yes,48,speaker
+full_sample,0788-0101405f-5745-4c8c-a882-d4eaf34b45fd,1.555375950114e+12,48,yes,"I just picked the picture I thought the Speaker was referring to,",no problems,480126,loved,yes,48,listener
+full_sample,9106-3dd6ddde-5a7f-48b8-8874-bb050508c5a5,1.555376232047e+12,48,yes,try to be as brief as possible,"No,",740922,loved,yes,48,speaker
+full_sample,9106-3dd6ddde-5a7f-48b8-8874-bb050508c5a5,1.555376288388e+12,48,yes,go what was distinctly described,,476997,loved,yes,48,listener
+full_sample,4425-e80ade8f-82e5-40b4-9644-c9993e2ff689,1.556314753708e+12,48,yes,"Just read what the speaker said,",No issues,275715,loved,yes,48,listener
+full_sample,4425-e80ade8f-82e5-40b4-9644-c9993e2ff689,1.55631476246e+12,48,yes,"I tried to describe the clothing since everyone was wearing different clothes,","No problems,",345744,loved,yes,48,speaker
+full_sample,7149-868b1541-0361-485e-9d28-6f96b5f019aa,1.556315080028e+12,48,yes,"Very good, listened to the speaker and answered accordingly,","No issues, thank you,",368970,liked,yes,48,listener
+full_sample,7149-868b1541-0361-485e-9d28-6f96b5f019aa,1.556315118659e+12,48,yes,"make it easy for the person guessing, so use something descriptive that is unique to the picture",no problems,470470,loved,yes,48,speaker
+full_sample,7733-c04d8a0d-4cd9-4332-a8db-6e3307803df5,1.556315188887e+12,48,yes,describing the shirts was easiest,no,311792,loved,yes,48,speaker
+full_sample,7733-c04d8a0d-4cd9-4332-a8db-6e3307803df5,1.556315209172e+12,48,yes,"just guess from what I was given in message,",no,330563,loved,yes,48,listener
+full_sample,4849-0a9c570b-f0fb-4f89-83fc-8670ae4942a7,1.556315220311e+12,48,yes,I listened to the speaker and guessed,No,401803,loved,yes,48,listener
+full_sample,4849-0a9c570b-f0fb-4f89-83fc-8670ae4942a7,1.556315236603e+12,48,yes,"I tried to explain in the best way I could in the beginning and as my partner became more comfortable I shortened my descriptions,",,431841,loved,yes,48,speaker
+full_sample,7782-75557c4c-1c0e-4c1f-aa2d-4da2ae7dc275,1.556315414582e+12,46,yes,i had to pick a photo based on the speakers description,no,432143,loved,yes,46,listener
+full_sample,7782-75557c4c-1c0e-4c1f-aa2d-4da2ae7dc275,1.556315455444e+12,46,yes,"typing whatever was in the front and most noticeable that stood out, Looking for what the picture had that the rest did not,","Changing the pictures after 8 round would be better, 3 sets of pictures would lead to a diverse study,",494716,loved,yes,46,speaker
+full_sample,4999-4061da0a-e0a0-4869-b18d-2f246c405706,1.556315555898e+12,46,yes,Describing the same pictures with fewer words to make the experiment go faster,no,513262,okay,yes,46,speaker
+full_sample,5989-b598be26-5041-4c6f-a5cc-ad63bb2955aa,1.556315556961e+12,48,yes,"Find a simple thing that shows the picture being obvious and just going with that,","Nope,",377348,loved,yes,48,speaker
+full_sample,5989-b598be26-5041-4c6f-a5cc-ad63bb2955aa,1.556315566897e+12,48,yes,I just used the clues to figure out what my partner was trying to tell me,no,387034,okay,yes,48,listener
+full_sample,8390-d31c89af-0510-428e-af13-c2322c67619c,1.556315606412e+12,48,yes,"Descriptive at first then narrow it down to single words that still described it but made it quicker,",no,325779,loved,yes,48,speaker
+full_sample,8390-d31c89af-0510-428e-af13-c2322c67619c,1.556315622174e+12,48,yes,"Getting used to the wording of the speaker so that each picture could be described with one or two words,",No,281412,loved,yes,48,listener
+full_sample,4999-4061da0a-e0a0-4869-b18d-2f246c405706,1.556315654233e+12,46,yes,"My strategy was to identify the objects my partner was describing to me,",Great experiment!,557843,liked,yes,46,listener
+full_sample,9919-601cb97e-c811-47cf-8ce8-9410ad746e4a,1.55631566743e+12,48,yes,,,489759,okay,yes,48,listener
+full_sample,1733-362e3f99-ce8f-43b1-bc27-4c45de91aa40,1.556315679009e+12,44,yes,"The hardest one was choosing between the filtered and unfiltered picture,  The others were easy to identify,",no,651605,okay,yes,44,listener
+full_sample,9919-601cb97e-c811-47cf-8ce8-9410ad746e4a,1.556315679772e+12,48,yes,"I sent the key requirement,",No,528255,loved,yes,48,speaker
+full_sample,1733-362e3f99-ce8f-43b1-bc27-4c45de91aa40,1.556315726482e+12,44,yes,"I was overly descriptive in the beginning and then me and my partner figured it out and were able to work more efficiently towards the end,","No, It was really fun so thank you for letting me be a part of your study,",714647,loved,yes,44,speaker
+full_sample,9743-1f2422cc-ed40-4d7a-9994-32f699a23728,1.556316169691e+12,48,yes,My partner described really well,,900470,loved,yes,48,listener
+full_sample,9743-1f2422cc-ed40-4d7a-9994-32f699a23728,1.55631619253e+12,48,yes,"I started out at first being more specifically descriptive then once the other person could tell what I meant, I gave more succinct descriptions,","Everything seemed to work great,",932465,liked,yes,48,speaker
+full_sample,7874-32455593-721f-4fee-b4c3-bd9bd889489b,1.556316384548e+12,42,yes,"I tried to keep it simple and make it easy for the listener to narrow it down to one picture,","No, I didn't notice any problems or have any issues,",586278,okay,yes,42,speaker
+full_sample,7874-32455593-721f-4fee-b4c3-bd9bd889489b,1.556316403225e+12,42,yes,It was good,Nil,581214,okay,yes,42,listener
+full_sample,0316-f782f20f-6b40-4846-b1f7-e5e8447b87c9,1.55631640793e+12,48,yes,"I just listened to whatever the speaker said, They were descriptive enough for me to know which picture to choose,","No,",347106,loved,yes,48,listener
+full_sample,0316-f782f20f-6b40-4846-b1f7-e5e8447b87c9,1.556316424172e+12,48,yes,"I described the most prominent object(s) in the image and figured my partner would understand off the bat as I reduced the needed words in the descriptive sentences,",,454406,liked,yes,48,speaker
+full_sample,7231-af65094b-f170-4dad-b67d-66a1cb59c2d4,1.556317062616e+12,46,yes,"looking for details unique to each photo, but my partner was amazing",,385597,loved,yes,46,listener
+full_sample,7231-af65094b-f170-4dad-b67d-66a1cb59c2d4,1.556317110691e+12,46,yes,"Short and simple and picking the most descriptive items to highlight, First four messages were very detailed, The rest were short and quick,",no,886891,loved,yes,46,speaker
+full_sample,7560-72dbf7e1-0071-48dc-a1db-0b02b3d6a839,1.556317215001e+12,48,yes,"I just looked at the pictures to see what matched what they said,",no,398737,okay,yes,48,listener
+full_sample,7560-72dbf7e1-0071-48dc-a1db-0b02b3d6a839,1.556317215502e+12,48,yes,"i described what was in the picture,",no,443327,loved,yes,48,speaker
+full_sample,1006-8a964204-bce4-48de-9bb1-2933a4c017f7,1.556317630906e+12,48,yes,"Listen to the other person, Try to understand the building they're describing","Nothing to add,",618554,loved,yes,48,listener
+full_sample,1006-8a964204-bce4-48de-9bb1-2933a4c017f7,1.55631767688e+12,48,yes,"The beginning I was descriptive but once they knew the key words, to save time and typing I used only key words","Interesting study and fun, thanks",813587,okay,yes,48,speaker
+full_sample,5200-ecd26486-833f-4eef-bb12-04a51771a46c,1.556317886743e+12,48,yes,"I figured out the most substantial easily identifiable universal thing to label each picture as,","Nope, have a nice day,",812186,liked,yes,48,speaker
+full_sample,5200-ecd26486-833f-4eef-bb12-04a51771a46c,1.556317926535e+12,48,yes,"Since I all I had to do was click on the picture described there wasn't any real strategy,  My partner's descriptions were good and he was smart and kept using them since they worked,","Everything went well,",408047,loved,yes,48,listener
+full_sample,7958-0c3ed1b7-c739-47c3-bb63-8e557cddcef7,1.556318304887e+12,48,yes,describe it as briefly and quickly as possible,no issues,398470,liked,yes,48,speaker
+full_sample,7958-0c3ed1b7-c739-47c3-bb63-8e557cddcef7,1.556318315563e+12,48,yes,"To look at what the other player typed and look for specific things in the images that match the description,",No,385269,okay,yes,48,listener
+full_sample,1769-4c90f5bb-b1da-4a22-a052-c282724b78e8,1.55632085141e+12,48,yes,One word descriptions of the rooms,,371834,loved,yes,48,listener
+full_sample,1769-4c90f5bb-b1da-4a22-a052-c282724b78e8,1.556320853125e+12,48,yes,same descriptions,no,404575,loved,yes,48,speaker
+full_sample,5807-a6a4d6a1-cb42-48bc-823e-e4d7efc838aa,1.5563210547e+12,46,yes,Look at the photos and see which were described,None,445484,loved,yes,46,listener
+full_sample,5807-a6a4d6a1-cb42-48bc-823e-e4d7efc838aa,1.55632108618e+12,46,yes,"To be as descriptive as possible at first, then shorten the description with unique qualities of each photo,","No, it worked fine,",507760,loved,yes,46,speaker
+full_sample,6560-a25f4783-ee0a-431e-9668-22d47611113f,1.556321126196e+12,48,yes,describe the pic quickly,no,626755,loved,yes,48,speaker
+full_sample,6560-a25f4783-ee0a-431e-9668-22d47611113f,1.556321127811e+12,48,yes,"Tried to imagine what my partner is looking at,","No problems,",555184,loved,yes,48,listener
+full_sample,0518-1801bcc1-4d64-464c-99f3-6e4bc34d2b9a,1.556321536628e+12,48,yes,"I repeated key words that I found easy to retype,",no,868322,liked,yes,48,speaker
+full_sample,0518-1801bcc1-4d64-464c-99f3-6e4bc34d2b9a,1.556321546995e+12,48,yes,pay attention,no,871410,okay,yes,48,listener
+full_sample,1970-9004306c-6812-4765-b5b3-c71fe2958c9f,1.556321548085e+12,48,yes,"the descriptions were well written,  it was easy",no,433750,loved,yes,48,listener
+full_sample,1970-9004306c-6812-4765-b5b3-c71fe2958c9f,1.556321550059e+12,48,yes,"Describe the photo as detailed as possible and then continue with that description,",,625485,loved,yes,48,speaker
+full_sample,9590-a6edaaa6-da0d-4cdb-8f25-a3977f73da13,1.556321980353e+12,48,yes,to pay attention,none,398276,liked,yes,48,listener
+full_sample,9590-a6edaaa6-da0d-4cdb-8f25-a3977f73da13,1.556322037219e+12,48,yes,"I identified one unique feature of each image, usually something concerning the background, The explanations got shorter with time, once the unique feature was understood,","The text box would get obscured by the images, so it was hard to see what I was typing,",808232,liked,yes,48,speaker
+full_sample,7458-763c31e9-7940-41bb-aad7-fab4468f4da2,1.556322943598e+12,48,yes,read what they put and choose that one,"I did not,",597293,loved,yes,48,listener
+full_sample,7458-763c31e9-7940-41bb-aad7-fab4468f4da2,1.556323003831e+12,48,yes,"find something unmistakable to any viewer,","No problems, Fun!",710314,loved,yes,48,speaker
+full_sample,0525-6aa6a04d-370d-4465-8024-fb0fb373fac0,1.556323447737e+12,46,yes,being descriptive of uniqueness,no,743539,okay,yes,46,speaker
+full_sample,0525-6aa6a04d-370d-4465-8024-fb0fb373fac0,1.556323495959e+12,46,yes,paying attention to the other player clues and style,"I had no problems, The images loaded well for my low speed internet,",467711,loved,yes,46,listener
+full_sample,6856-521907d0-a42c-4fde-9df3-1d07ccec0f22,1.556323539668e+12,48,yes,Describe the color,No,373499,loved,yes,48,speaker
+full_sample,6856-521907d0-a42c-4fde-9df3-1d07ccec0f22,1.556323580977e+12,48,yes,"I listened for color descriptions, when two colors were listed in the description I knew which picture to choose,","No, everything worked as expected,",323268,loved,yes,48,listener
+full_sample,9160-21339a4b-d804-4a69-98eb-53b1790e7986,1.556324521943e+12,46,yes,"i tried to look for specific objects, and keep re-using them if my partner got them correct",,482561,loved,yes,46,speaker
+full_sample,9160-21339a4b-d804-4a69-98eb-53b1790e7986,1.556324606487e+12,46,yes,"I just picked the photo that matched the description, After the first couple of photos, it was easy because the photos didn't change, It wasn't that challenging,","The only problem I had was with the photo with the three little photos attached to it, Early on, I thought I clicked on it but it was the photo next to it, It would be easier to make sure people click the correct photo if the photos had borders instead of running together,",547277,loved,yes,46,listener
