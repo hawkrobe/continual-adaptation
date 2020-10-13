@@ -9,11 +9,12 @@
 
 # To reproduce experiments
 
-1. install PyTorch and the COCO API:
+1. install dependencies and the COCO API:
 
 ```
 conda install pytorch torchvision -c pytorch
 conda install Cython nltk
+pip install -U symspellpy
 git clone https://github.com/pdollar/coco.git
 cd coco/PythonAPI/
 make
