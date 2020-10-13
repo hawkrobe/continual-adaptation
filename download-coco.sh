@@ -1,10 +1,14 @@
-curl http://msvocds.blob.core.windows.net/annotations-1-0-3/captions_train-val2014.zip -o "./data/preprocess/#1"
-curl http://images.cocodataset.org/zips/train2014.zip -o "./data/preprocess/#1"
-curl http://images.cocodataset.org/zips/val2014.zip -o "./data/preprocess/#1"
+curl http://images.cocodataset.org/annotations/annotations_trainval2014.zip -o "./data/preprocess/annotations_trainval2014.zip"
+curl http://images.cocodataset.org/zips/val2014.zip -o "./data/preprocess/val2014.zip"
 
-unzip ./data/preprocess/captions_train-val2014.zip -d ./data/preprocess
-rm ./data/preprocess/captions_train-val2014.zip
-unzip ./data/preprocess/train2014.zip -d ./data/preprocess
-rm ./data/preprocess/train2014.zip 
-unzip ./data/val2014.zip -d ./data/preprocess
-rm ./data/preprocess/val2014.zip 
+unzip ./data/preprocess/annotations_trainval2014.zip -d ./data/preprocess
+unzip ./data/preprocess/val2014.zip -d ./data/preprocess
+
+rm ./data/preprocess/annotations_trainval2014.zip
+rm ./data/preprocess/val2014.zip
+
+mv ./data/preprocess/val2014 ./data/preprocess/val2014_raw
+
+python ./data/preprocess/resize.py
+
+rm -r ./data/preprocess/val2014_raw

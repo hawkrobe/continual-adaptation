@@ -18,15 +18,15 @@ import operator, collections
 import string
 import spacy
 
-data_dir = '/data/rxdh/conventions_data'
-data_type = 'resized_val2014'
+data_dir = '../data/preprocess/'
+data_type = 'val2014'
 coco = COCO('{}/annotations/instances_{}.json'.format(data_dir, data_type))
 coco_caps = COCO('{}/annotations/captions_{}.json'.format(data_dir, data_type))
 
 device = torch.device('cuda:8' if torch.cuda.is_available() else 'cpu')
-torch.cuda.set_device(8)
-print("current cuda device: ", torch.cuda.current_device())
 print("device: ", device)
+if torch.cuda.is_available() :
+    torch.cuda.set_device(device)
 nlp = spacy.load("en_core_web_sm")
 sym_spell = SymSpell(2, 7)
 sym_spell.load_dictionary('../data/preprocess/frequency_dictionary_en_82_765.txt',0,1)

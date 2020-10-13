@@ -75,17 +75,10 @@ def construct_context_grid(args) :
     if args.num_samples >= len(gameids) :
         args.num_samples = len(gameids)
         
-    sampled_gameids = np.random.choice(list(gameids), args.num_samples,
-                                       replace = False)
+    sampled_gameids = np.random.choice(list(gameids), args.num_samples, replace = False)
        
-    #sampled_gameids = ['5463-bb90cd20-cc2c-428c-9775-d62716accacf'] # amazon/pokadot
-    #sampled_gameids = ['0316-f782f20f-6b40-4846-b1f7-e5e8447b87c9'] # bouquets
-    #sampled_gameids = ['0518-1801bcc1-4d64-464c-99f3-6e4bc34d2b9a'] # bunch of typos
-    #sampled_gameids = ['4831-98a48100-302d-41ce-ac49-08a3c2e88ea4'] # belcony
-    #sampled_gameids = ['7149-868b1541-0361-485e-9d28-6f96b5f019aa'] # lifejacket
     for i, gameid in enumerate(sampled_gameids) :
         speaker_data = list(filter(lambda x : x['gameid'] == gameid, human_input))
-        print(speaker_data)
         
         context_info = dict(
             context_type = 'challenge',
@@ -171,16 +164,18 @@ def main_memory(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    data_dir = '../data/preprocess/'
     parser.add_argument('--crop_size', type=int, default=224 , help='size for randomly cropping images')
     parser.add_argument('--exp_dir', type=str, default = './experiments')
-    parser.add_argument('--encoder_path', type=str, default='/data/rxdh/conventions_data/encoder-5-3000.pkl', help='path for trained encoder')
-    parser.add_argument('--decoder_path', type=str, default='/data/rxdh/conventions_data/decoder-5-3000.pkl', help='path for trained decoder')
+    parser.add_argument('--encoder_path', type=str, default=f'{data_dir}/encoder-5-3000.pkl',
+                        help='path for trained encoder')
+    parser.add_argument('--decoder_path', type=str, default=f'{data_dir}/decoder-5-3000.pkl',
+                        help='path for trained decoder')
     parser.add_argument('--image', type=str, help='input image for generating caption')
     parser.add_argument('--model_path', type=str, default='models/' , help='path for saving trained models')
-    #parser.add_argument('--vocab_path', type=str, default='/home/rxdh/coco/vocab.pkl', help='path for vocabulary wrapper')
-    #parser.add_argument('--image_dir', type=str, default='/home/rxdh/coco/resized_val2014', help='directory for resized images')
-    parser.add_argument('--vocab_path', type=str, default='/data/rxdh/conventions_data/vocab.pkl', help='path for vocabulary wrapper')
-    parser.add_argument('--image_dir', type=str, default='/data/rxdh/conventions_data/val2014', help='directory for resized images')
+    parser.add_argument('--vocab_path', type=str, default=f'{data_dir}/vocab.pkl',
+                        help='path for vocabulary wrapper')
+    parser.add_argument('--image_dir', type=str, default='f{data_dir}/val2014', help='directory for resized images')
     parser.add_argument('--log_step', type=int , default=10, help='step size for prining log info')
     parser.add_argument('--val_step', type=int , default=10, help='step size for prining val info')
     parser.add_argument('--save_step', type=int , default=1000, help='step size for saving trained models')

@@ -206,10 +206,11 @@ def main_memory(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--encoder_path', type=str, help='path for trained encoder')
-    parser.add_argument('--decoder_path', type=str, help='path for trained decoder')
-    parser.add_argument('--vocab_path', type=str, default='/data/rxdh/conventions_data/vocab.pkl', help='path for vocabulary wrapper')
-    parser.add_argument('--image_dir', type=str, default='/data/rxdh/conventions_data/resized_val2014/', help='directory for resized images')
+    data_dir = '../data/preprocess/'
+    parser.add_argument('--encoder_path', type=str, default='f{data_dir}/encoder-5-3000.pkl', help='path for trained encoder')
+    parser.add_argument('--decoder_path', type=str, default='f{data_dir}/decoder-5-3000.pkl', help='path for trained decoder')
+    parser.add_argument('--vocab_path', type=str, default='f{data_dir}/vocab.pkl', help='path for vocabulary wrapper')
+    parser.add_argument('--image_dir', type=str, default='f{data_dir}/val2014/', help='directory for resized images')
     parser.add_argument('--crop_size', type=int, default=224 , help='size for randomly cropping images')
     parser.add_argument('--exp_dir', type=str, default = './experiments')
     parser.add_argument('--image', type=str, help='input image for generating caption')
